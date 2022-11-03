@@ -9,15 +9,17 @@ class Solution
 	public:
     int gcd(int A, int B) 
 	{ 
-	    int min_num=min(A,B);
-	    for(int i=min_num;i>=1;i--)
+	    while(A!=B)
 	    {
-	        if(A%min_num==0 && B%min_num==0)
+	        if(A>B)
 	        {
-	            break;
+	            A=A-B;
 	        }
-	        min_num--;
+	        else
+	        {
+	            B=B-A;
+	        }
 	    }
-	    return min_num;
+	    return A;
 	} 
 };
