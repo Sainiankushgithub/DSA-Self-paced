@@ -1,0 +1,23 @@
+//{ Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+
+// } Driver Code Ends
+//User function Template for C++
+class Solution
+{
+	public:
+    int gcd(int A, int B) 
+	{ 
+	    int min_num=min(A,B);
+	    for(int i=min_num;i>=1;i--)
+	    {
+	        if(A%min_num==0 && B%min_num==0)
+	        {
+	            break;
+	        }
+	        min_num--;
+	    }
+	    return min_num;
+	} 
+};
