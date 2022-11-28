@@ -33,19 +33,3 @@ class Solution
 		}
 };
 
-//{ Driver Code Starts.
-int main(){
-    int T;
-    cin >> T;
-    while(T--)
-    {
-    	int n;
-    	cin >> n;
-    	Solution ob;
-    	string ans = ob.is_palindrome(n);
-    	cout << ans <<"\n";
-    }
-	return 0;
-}
-
-// } Driver Code Ends
