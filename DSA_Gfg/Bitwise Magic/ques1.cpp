@@ -47,6 +47,7 @@ int main()
     cout<<"\nEnter the number whom left shift you want to find ";
     cin>>x1;
     int arr[100];
+    int brr[100];
     int i=0;
     int temp=x1;
     while(temp>0)
@@ -62,6 +63,7 @@ int main()
     {
         cout<<arr[i]<<" ";
     }
+    /*ANOTHE WAY OF FINDING THE LEFT SHIFT*/
     cout<<"\nEnter the number how many number you want to left shift ";
     cin>>y1;
     int p;
