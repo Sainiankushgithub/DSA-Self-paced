@@ -1,7 +1,10 @@
 /*HOW DO YOU CHECK THE KTH BIT IS SET BIT OR NOT*/
 #include<bits/stdc++.h>
 using namespace std;
-void isset(int n,int k)
+
+/*NAIVE SOLUTION TO CHECK THE KTH BIT IS SET OR NOT*/
+
+/*void isset(int n,int k)
 {
     int x=1;
     for(int i=0;i<k-1;i++)
@@ -17,6 +20,54 @@ void isset(int n,int k)
         {
             printf("Kth bit is not the set bit");
         }
+}*/
+
+/*ALTENATIVE NAIVE SOLUTION TO CHECK THE KTH BIT IS SET OR NOT*/
+
+/*void isset(int n, int k)
+{
+    for(int i=0;i<(k-1);i++)
+    {
+        n=n/2;
+    }
+    if((n&1)!=0)
+    {
+        printf("Yes Kth bit is the set bit\n");
+    }
+    else
+    {
+        printf("No Kth bit is not the set bit\n");
+    }
+}*/
+
+/*EFFICENT METHOD I TO CHECK FOR KTH BIT*/
+/*
+void isset(int n,int k)
+{
+    int x=(1<<(k-1));
+    if((n&x)!=0)
+    {
+        printf("Yes Kth bit is the set bit\n");
+    }
+    else
+    {
+        printf("No Kth bit is not the set bit\n");
+    }
+}*/
+
+/*EFFICENT METHOD II TO CHECK FOR KTH BIT*/
+
+void isset(int n,int k)
+{
+    int x=(n>>(k-1));
+    if((x&1)!=0)
+    {
+        printf("Yes Kth bit is the set bit\n");
+    }
+    else
+    {
+        printf("No Kth bit is not the set bit\n");
+    }
 }
 int main()
 {
