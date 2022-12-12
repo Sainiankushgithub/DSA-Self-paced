@@ -1,7 +1,7 @@
 /*COUNT SET BIT */
 #include<bits/stdc++.h>
 using namespace std;
-int countsetbit(int n)
+/*int countsetbit(int n)
 {
     int res=0;
     while(n>0)
@@ -13,13 +13,25 @@ int countsetbit(int n)
         n=n/2;
     }
     return res;
+}*/
+/*BRIAN KERNINGAM'S ALGORITM */
+int countsetbit(int n)
+{
+    int res=0;
+    while(n>0)
+    {
+        n=n&(n-1);
+        res++;
+        n=n/2;
+    }
+    return res;
 }
 int main()
 {
     int n;
-    printf("Enter the number to count its sets bit\n");
-    scanf("%d",&n);
+    cout<<"Enter the number to count its sets bit\n";
+    cin>>n;
     countsetbit(n);
-    printf("Total number of set bits in %d is %d",n,countsetbit(n));
+    cout<<"Total number of set bits in "<<n<<" is "<<countsetbit(n);
 return 0;
 }
