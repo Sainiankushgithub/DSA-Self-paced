@@ -11,7 +11,7 @@ int fun(int n)
         return 1+fun(n/2);
     }
 }
-int main()
+int main()                                      /*OUTPUT : 4 */
 {
     cout<<fun(16);
 return 0;
