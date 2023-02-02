@@ -34,7 +34,7 @@ int getlargest(int arr[],int size)
 
 // ANOTHER METHOD APPROACH         THIS ONE IS ALSO A NAIVE APPROACH
 
-int getlargest(int arr[])
+/* int getlargest(int arr[])
 {
     for(int i=0;i<4;i++)
     {
@@ -59,4 +59,25 @@ int main()
     getlargest(arr);
     cout<<"Largest element is "<<getlargest(arr);
     return 0;
+} */
+
+// EFFICIENT APPROACH
+
+int getlargest(int arr[],int n)
+{
+    int res=0;
+    for(int i=1;i<n;i++)
+    {
+        if(arr[res]<arr[i])
+        {
+           arr[res]=arr[i];
+        }
+    }
+    return arr[res];
+}
+int main()
+{
+    int arr[]={3,6,5,1,9};
+    getlargest(arr,5);
+    cout<<"Largest element is "<<getlargest(arr,5);
 }
