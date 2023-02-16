@@ -3,16 +3,24 @@
 #include<bits/stdc++.h>
 using namespace std;
 // 1. REVERSE A NUMBER USING RECURSION
-void reverse(int n)
+int reverse(int n,int sum)
 {
-    if(n<10)
+    if(n==0)
     {
-        cout<<n;
-        return;
+        return sum;
     }
     else{
-        cout<<n%10;
-        reverse(n/10);
+    return reverse(n/10,sum*10+n%10);
+}
+}
+bool palindrome(int n)
+{
+    if(reverse(n,0)==n)
+    {
+        return true;
+    }
+    else{
+        return false;
     }
 }
 int main()
@@ -20,6 +28,11 @@ int main()
     int n;
     cout<<"Enter the number to get its reverse using recursion\n";
     cin>>n;
-    reverse(n);
-return 0;
+    reverse(n,0);
+    cout<<"Reverse of your number is "<<reverse(n,0);
+    cout<<endl;
+    // 2.CHECK WHETHER GIVEN NUMBER IS PALINDROME OR NOT 
+    palindrome(n);
+    cout<<"Your number is palindrome or not "<<palindrome(n);
+    return 0;
 } 
