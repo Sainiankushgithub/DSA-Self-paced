@@ -9,32 +9,42 @@ void display(int arr[],int size)
     }
     cout<<endl;
 }
-int removeduplicate(int arr[],int size)
+void sortarray(int arr[],int n)
 {
-    for(int i=0;i<size;i++)
+    for(int i=0;i<n;i++)
     {
-        for(int j=i+1;j<size;j++)
-        {                                                 // NEED HELP THERE HOW TO TAKE THE NEW SIZE AFTER REMOVING THE DUPLICATE
-            if(arr[j]==arr[j+1])                          // ELEMENT I M NOT ABLE TO FIGURE OUT THE NEW SIZE THAT HOW WOULD I TAKE ? 
+        for(int j=0;j<n;j++)
+        {
+            if(arr[j]>arr[j+1])
             {
-                for(int k=j;k<size-i;k++)
-                {
-                    int temp=arr[k];
-                    arr[k]=arr[k+1];
-                    arr[k+1]=temp;
-                }
+                int temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
             }
         }
     }
-    return size;
+}
+int removeduplicate(int arr[],int size)
+{
+    int j=0;
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i]!=arr[i+1])
+        {
+            arr[j++]=arr[i];
+        }
+    }
+    return j;
 }
 int main()
 {
-    int arr[]={10,20,20,30,30,40,40,40,50};
+    int arr[]={1,2,3,4,1,2,3,5,6};
     int size=sizeof(arr)/sizeof(int);
     cout<<"Displaying the array before removing the duplicate elements\n";
     display(arr,size);
-    removeduplicate(arr,size);
+    sortarray(arr,size);
+    cout<<"Displaying the array in sorted form\n";
+    display(arr,size);
     int size1=removeduplicate(arr,size);
     cout<<"Displaying the array after removing the duplicate elements\n";
     display(arr,size1);
