@@ -1,48 +1,49 @@
-// LEFT ROTATE AN ARRAY BY D 
+// LEFT REMOVE AN ARRAY BY D
 #include<bits/stdc++.h>
 using namespace std;
-void display(int arr[],int size)
+void leftrotateOne(int arr[],int n)
 {
-    for(int i=0;i<size;i++)
+    int temp=arr[0];
+    for(int i=0;i<n;i++)
+    {
+        arr[i]=arr[i+1];
+    }
+    arr[n-1]=temp;
+}
+void leftRotatebyN(int arr[],int n,int d)
+{
+    for(int i=1;i<d;i++)
+    {
+        leftrotateOne(arr,n);
+    }
+}
+void display(int arr[],int n)
+{
+    for(int i=0;i<n;i++)
     {
         cout<<arr[i]<<" ";
     }
     cout<<endl;
 }
-void leftrotate(int arr[],int size,int  n)
-{
-    int temp[size];
-    for(int i=0;i<n;i++)
-    {
-        temp[size-n+i]=arr[i];    
-    }                                           // THIS ALL IS MY CONCEPT THAT I HAVE USED HERE
-    for(int i=0;i<size-n;i++)                   
-    {
-        arr[i]=arr[n+i];
-    }
-    for(int i=size-n;i<size;i++)
-    {
-        arr[i]=temp[i];
-    }
-}
 int main()
 {
-    int size;
-    cout<<"Enter the size of an array\n";
-    cin>>size;
-    int arr[size];
-    cout<<"Enter the numbers of an elemets\n";
-    for(int i=0;i<size;i++)
+    int n;
+    cout<<"Ente the size of an array\n";
+    cin>>n;
+    int arr[n];
+    cout<<"Enter the numbers of an elements\n";
+    for(int i=0;i<n;i++)
     {
         cin>>arr[i];
     }
-    cout<<"Displaying your array before any left shift by an array\n";
-    display(arr,size);
-    int n;
-    cout<<"Enter the number for how much left shift you want\n";
-    cin>>n;
-    leftrotate(arr,size,n);
-    cout<<"Displaying your array after some left shift by an array\n";
-    display(arr,size);
+    cout<<"Displaying the array without any left rotation\n";
+    display(arr,n);
+    leftrotateOne(arr,n);
+    int d;
+    cout<<"Enter the number how many left rotation to want to do\n";
+    cin>>d;
+    leftRotatebyN(arr,n,d);
+    cout<<"Displaying the array after some left rotation\n";
+    display(arr,n);
 return 0;
 }
