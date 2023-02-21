@@ -11,18 +11,18 @@ void display(int arr[],int size)
 }
 void leftrotate(int arr[],int size,int  n)
 {
-    int temp[size];
+    int temp[n];
     for(int i=0;i<n;i++)
     {
-        temp[size-n+i]=arr[i];    
-    }                                           // THIS ALL IS MY CONCEPT THAT I HAVE USED HERE
-    for(int i=0;i<size-n;i++)                   
-    {
-        arr[i]=arr[n+i];
+        temp[i]=arr[i];
     }
-    for(int i=size-n;i<size;i++)
+    for(int i=n;i<size;i++)
     {
-        arr[i]=temp[i];
+        arr[i-n]=arr[i];
+    }
+    for(int i=0;i<n;i++)
+    {
+        arr[size-n+i]=temp[i];
     }
 }
 int main()
