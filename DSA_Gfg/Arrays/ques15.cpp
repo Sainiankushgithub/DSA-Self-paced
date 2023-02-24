@@ -9,6 +9,25 @@ void display(int arr[],int size)
     }
     cout<<endl;                                               
 }
+void Leaderelement(int arr[],int size)
+{
+    for(int i=0;i<size;i++)
+    {
+        bool flag=false;
+        for(int j=i+1;j<size;j++)
+        {
+            if(arr[i]<=arr[j])
+            {
+                flag=true;
+                break;
+            }
+        }
+        if(flag==false)
+        {
+            cout<<arr[i]<<" ";
+        }
+    }
+}
 int main()
 {
     int size;
@@ -22,5 +41,7 @@ int main()
     }
     cout<<"Displaying your array before \n";
     display(arr,size);
+    cout<<"Displaying the leader elements in an array\n";
+    Leaderelement(arr,size);
 return 0;
 }
