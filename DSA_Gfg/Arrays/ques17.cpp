@@ -12,7 +12,7 @@ void display(int arr[],int size)
 }
 int main()
 {
-    int size;
+    int size;                                                                      // METHOD 1
     cout<<"Enter the size of an array\n";
     cin>>size;
     int arr[size];
@@ -23,6 +23,6 @@ int main()
     }
     cout<<"Displaying the array elemets before getting any leader elements\n";
     display(arr,size);
-    cout<<"Displaying your leader elements\n";
+    cout<<"Displaying maximum difference elements\n";
     return 0;
 }
