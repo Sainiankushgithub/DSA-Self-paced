@@ -10,9 +10,21 @@ void display(int arr[],int size)
     }
     cout<<endl;
 }
+int maximumdiff(int arr[],int size)
+{
+    int res=arr[1]-arr[0];
+    for(int i=0;i<size;i++)
+    {
+        for(int j=i+1;j<size;j++)
+        {
+            res=max(res,(arr[j]-arr[i]));
+        }
+    }
+    return res;
+}
 int main()
 {
-    int size;                                                                      // METHOD 1
+    int size;                                                                      // METHOD 2
     cout<<"Enter the size of an array\n";
     cin>>size;
     int arr[size];
@@ -23,6 +35,6 @@ int main()
     }
     cout<<"Displaying the array elemets before getting any leader elements\n";
     display(arr,size);
-    cout<<"Displaying maximum difference elements\n";
+    cout<<"Displaying maximum difference elements "<< maximumdiff(arr,size);;
     return 0;
 }
