@@ -11,7 +11,7 @@ void display(int arr[],int size)
 }
 int main()
 {
-    int size;                                                                      // METHOD 1
+    int size;                                                                      // METHOD 2
     cout<<"Enter the size of an array\n";
     cin>>size;
     int arr[size];
