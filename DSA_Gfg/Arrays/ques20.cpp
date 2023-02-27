@@ -11,21 +11,22 @@ void display(int arr[],int size)
 }
 void freq(int arr[],int size)
 {
-    int count=1;
-    for(int i=0;i<size;i++)
+    int i=1,freq=1;
+    while(i<size)
     {
-         count=1;
-         cout<<"Ankush saini"<<endl;
-        for(int j=i+1;j<size;j++)
+        freq=1;
+        cout<<"Ankush saini"<<endl;
+        while(i<size && arr[i]==arr[i-1])
         {
-            if(arr[i]==arr[j])
-            {
-                count++;                                                           // METHOD 1
-                i++;
-            }
+            freq++;
+            i++;
         }
-        cout<<arr[i]<<"="<<count;
-        cout<<endl;
+        cout<<arr[i-1]<<" "<<freq<<endl;                                    //METHOD 2
+        i++;
+    }
+    if(size==1||arr[size-1]!=arr[size-2])
+    {
+        cout<<arr[size-1]<<"="<<1;
     }
 }
 int main()
