@@ -24,7 +24,7 @@ int maximumdiff(int arr[],int size)
 }
 int main()
 {
-    int size;                                                                      // METHOD 2
+    int size;                                                                      // METHOD 1
     cout<<"Enter the size of an array\n";
     cin>>size;
     int arr[size];
