@@ -1,7 +1,7 @@
 // MAXIMUM CONSECUTIVE 1S IS
 #include<bits/stdc++.h>
 using namespace std;
-void display(int arr[],int size)
+void display(bool arr[],int size)
 {
     for(int i=0;i<size;i++)
     {
@@ -9,7 +9,7 @@ void display(int arr[],int size)
     }
     cout<<endl;
 }
-int consecutive(int arr[],int size)
+int consecutive(bool arr[],int size)
 {
     int count=0,res=0;
     for(int i=0;i<size;i++)
@@ -30,7 +30,7 @@ int main()
     int size;
     cout<<"Enter the size of an array\n";
     cin>>size;
-    int arr[size];
+    bool arr[size];
     cout<<"Enter the numbers of an elements of an array in binary form\n";
     for(int i=0;i<size;i++)
     {
