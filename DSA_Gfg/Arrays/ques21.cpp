@@ -1,4 +1,4 @@
-// MAXIMUM CONSECUTIVE 1S IS
+// MAXIMUM CONSECUTIVE (1s) IS
 #include<bits/stdc++.h>
 using namespace std;
 void display(bool arr[],int size)
