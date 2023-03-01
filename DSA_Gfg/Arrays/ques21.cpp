@@ -9,17 +9,35 @@ void display(int arr[],int size)
     }
     cout<<endl;
 }
+int consecutive(int arr[],int size)
+{
+    int count=0,res=0;
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i]==1)
+        {
+            count++;
+            res=max(res,count);
+        }
+        else{
+            count=0;
+        }
+    }
+    return res;
+}
 int main()
 {
     int size;
     cout<<"Enter the size of an array\n";
     cin>>size;
     int arr[size];
-    cout<<"Enter the numbers of an elements of an array\n";
+    cout<<"Enter the numbers of an elements of an array in binary form\n";
     for(int i=0;i<size;i++)
     {
         cin>>arr[i];
     }
+    cout<<"Displaying your elements\n";
     display(arr,size);
+    cout<<"Maximum consecutive (1s) ones is :"<<consecutive(arr,size);
 return 0;
 }
