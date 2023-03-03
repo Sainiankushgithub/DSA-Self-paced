@@ -1,19 +1,13 @@
-// PRINTIGN THE SUB ARRAY
+// MAXIMUM SUM SUBARRAY
 #include<bits/stdc++.h>
 using namespace std;
 void display(int arr[],int size)
 {
     for(int i=0;i<size;i++)
     {
-        for(int j=0;j<size;j++)
-        {
-            for(int k=i;k<=j;k++)
-            {
-                cout<<arr[k]<<" ";
-            }
-            cout<<endl;
-        }
+        cout<<arr[i]<<" ";
     }
+    cout<<endl;
 }
 int main()
 {
@@ -26,7 +20,6 @@ int main()
     {
         cin>>arr[i];
     }
-    cout<<"Displaying your sub array elements\n";
     display(arr,size);
 return 0;
 }

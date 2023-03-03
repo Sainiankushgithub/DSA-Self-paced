@@ -1,4 +1,4 @@
-// PRINTIGN THE SUB ARRAY
+// PRINTIGN THE SUB ARRAY Elements
 #include<bits/stdc++.h>
 using namespace std;
 void display(int arr[],int size)
