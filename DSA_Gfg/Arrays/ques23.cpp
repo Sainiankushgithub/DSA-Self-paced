@@ -14,7 +14,7 @@ void display(int arr[],int size)
                sum+=arr[k];
             }
             res=max(res,sum);
-        }
+        }                                                  // METHOD 1
     }
     cout<<"Maximum sum is "<<res;
 }

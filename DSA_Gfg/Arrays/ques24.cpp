@@ -11,7 +11,7 @@ void display(int arr[],int n)
         {
             sum=sum+arr[j];
             res=max(res,sum);
-        }
+        }                                      // METHOD 2
     }
     cout<<res;
 }
