@@ -16,7 +16,7 @@ int maxlenEvenOdd(int arr[],int n)
     {
         if((arr[i]%2==0)&&(arr[i-1]%2!=0)||(arr[i]%2!=0)&&(arr[i-1]%2==0))
         {
-            count++;                                                  // METHOD 2
+            count++;                                                                   // METHOD 2
             res=max(count,res);
         }
         else 
