@@ -9,6 +9,18 @@ void display(int arr[],int n)
     }
     cout<<endl;
 }
+int maxCirSubarray(int arr[],int n)
+{
+    int res=arr[0];
+    int maxEnding=arr[0];
+    for(int i=1;i<n;i++)
+    {
+        maxEnding=max(maxEnding+arr[i],arr[i]);
+        res=max(maxEnding,res);
+        maxEnding=res;
+    }
+    return res;
+}
 int main()
 {
     int n;
@@ -22,6 +34,6 @@ int main()
     }
     cout<<"Displaying your arrays elements\n";
     display(arr,n);
-    // cout<<"Maximum circular sub array sum is : "<<maxcirSubarray(arr,n);
+    cout<<"Maximum circular sub array sum is : "<<maxCirSubarray(arr,n);
 return 0;
 }
