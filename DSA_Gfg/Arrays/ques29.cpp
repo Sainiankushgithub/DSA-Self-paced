@@ -22,6 +22,5 @@ int main()
     }
     cout<<"Displaying your arrays elements\n";
     display(arr,n);
-    cout<<"Maximum circular sub array sum is : "<<maxCirSubarray(arr,n);
 return 0;
 }
