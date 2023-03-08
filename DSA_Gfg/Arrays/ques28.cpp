@@ -15,8 +15,8 @@ int maxCirSubarray(int arr[],int n)
     int maxEnding=arr[0];
     for(int i=1;i<n;i++)
     {
-        maxEnding=max(maxEnding+arr[i],arr[i]);
-        res=max(maxEnding,res);
+        maxEnding=max(maxEnding+arr[i],arr[i]);                                           // METHOD 1 
+        res=max(maxEnding,res);                                                           // NOT ACCURATE NEED OPTIMIZATION 
         maxEnding=res;
     }
     return res;
