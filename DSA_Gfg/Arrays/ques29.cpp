@@ -1,4 +1,5 @@
 // MAJORITY ELEMENT IN AN ARRAY
+// IF COUNT GREATER THAN N/2 PRINT ANY INDEX OF THE ELEMENT ,ELSE RETURN -1
 #include<bits/stdc++.h>
 using namespace std;
 void display(int arr[],int n)
