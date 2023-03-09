@@ -10,6 +10,25 @@ void display(int arr[],int n)
     }
     cout<<endl;
 }
+int majorityelement(int arr[],int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        int count=1;
+        for(int j=i+1;j<n;j++)
+        {
+            if(arr[i]==arr[j])
+            {
+                count++;
+            }
+        }
+            if(count>n/2)
+           {                                                               // METHOD 1 (NAIVE SOLUTION )
+            return i;                                                      // TIME COMPLEXCITY O(n^2)
+           }
+    }
+    return -1;
+}
 int main()
 {
     int n;
@@ -23,5 +42,6 @@ int main()
     }
     cout<<"Displaying your arrays elements\n";
     display(arr,n);
+    cout<<"Majority element situated at the index is : "<<majorityelement(arr,n);
 return 0;
 }
