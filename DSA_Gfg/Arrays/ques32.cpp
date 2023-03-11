@@ -1,7 +1,7 @@
 // MINIMUM GROUP FLIP TO MAKE SAME 
 #include<bits/stdc++.h>
 using namespace std;
-void display(int arr[],int n)
+void display(bool arr[],int n)
 {
     for(int i=0;i<n;i++)
     {
@@ -14,7 +14,7 @@ int main()
     int n;
     cout<<"Enter the size of an array\n";
     cin>>n;
-    int arr[n];
+    bool arr[n];
     cout<<"Enter the numbers of an elements of an array\n";
     for(int i=0;i<n;i++)
     {
@@ -22,5 +22,5 @@ int main()
     }
     cout<<"Displaying your arrays elements\n";
     display(arr,n);
-return 0;
+    return 0;
 }
