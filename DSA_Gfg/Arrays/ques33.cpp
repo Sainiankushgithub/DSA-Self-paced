@@ -12,7 +12,7 @@ void display(int arr[],int n)
 int maxSum(int arr[],int n,int k)
 {
     int res=INT_MIN;                                              // NAVIE SOLUTION
-    int sum=0;                                                    // METHOD 1 : 
+    int sum=0;                                                    // METHOD 1 : (THIS IS MY SOLUTION)
     for(int i=0;i<n-k+1;i++)
     {
         sum=0;
