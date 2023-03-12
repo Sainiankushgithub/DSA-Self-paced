@@ -12,13 +12,13 @@ void display(int arr[],int n)
 int maxSum(int arr[],int n,int k)
 {
     int res=INT_MIN;                                              // NAVIE SOLUTION
-    int sum=0;                                                    // METHOD 1 : (THIS IS MY SOLUTION)
-    for(int i=0;i<n-k+1;i++)
-    {                                                             // TIME COMPLEX. : O(n*k) 
-        sum=0;
-        for(int j=i;j<k+i;j++)
+    int sum=0;                                                    // METHOD 2 : (DSA NAVIE SOLUTION )
+    for(int i=0;i+k-1<n;i++)
+    {                                                            // TIME COMPL : O(n*k)
+        sum=0;                                                   // AUX SPACE : O(1)
+        for(int j=0;j<k;j++)
         {
-            sum=sum+arr[j];
+            sum=sum+arr[i+j];
         }
         res=max(res,sum);
     }
