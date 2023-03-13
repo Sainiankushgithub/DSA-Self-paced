@@ -18,10 +18,10 @@ int WindSlidTech(int arr[],int n,int k)
         sum+=arr[i];
     }
     int res=sum;
-    for(int i=k;i<n;i++)
-    {
-        sum=sum+arr[i]-arr[i-k];
-        res=max(res,sum);
+    for(int i=k;i<n;i++)                                          // METHOD 3 (EFFCIENT SOLUTION )
+    {                                                             // TIME : THETA(O)(n)
+        sum=sum+arr[i]-arr[i-k];                                 // AUX SPACE : O(1)
+        res=max(res,sum);                                        // METHOD IS ALSO KNOWN AS WINDOW SLIDING TECHNIQUE 
     }
     return res;
 }
