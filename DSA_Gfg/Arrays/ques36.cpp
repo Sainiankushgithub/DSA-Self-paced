@@ -34,7 +34,7 @@ int main()
     int arr[n];
     cout<<"Enter the numbers of an elements of an array\n";
     for(int i=0;i<n;i++)
-    {
+    {                                     // NO NEGATIVE INTEGER WOULDN'T BE IN ARRAY
         cin>>arr[i];                      // TAKING INPUT OF ALL POSITIVE INTEGER 
     }
     cout<<"Displaying your arrays elements are  \n";
