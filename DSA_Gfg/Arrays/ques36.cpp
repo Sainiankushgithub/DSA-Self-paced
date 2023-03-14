@@ -11,7 +11,6 @@ void display(int arr[],int n)
 }
 bool givensum(int arr[],int n, int sum1)
 {
-    int res=arr[0];
     for(int i=0;i<n;i++)
     {
         int sum=0;
