@@ -9,6 +9,10 @@ void display(int arr[],int n)
     }
     cout<<endl;
 }
+bool givenSum(int arr[],int n,int sum)                       // HERE WE USE AGAIN A WINDOW SLIDING TECHNIQUE
+{
+
+}
 int main()
 {
      int n;
@@ -22,5 +26,9 @@ int main()
     }
     cout<<"Displaying your array\n";
     display(arr,n);
+    int sum;
+    cout<<"Enter the sum to check whether is it present in the given sub array or not\n";
+    cin>>sum;
+    cout<<"Given sum is present or not : "<<givenSum(arr,n,sum);
 return 0;
 }
