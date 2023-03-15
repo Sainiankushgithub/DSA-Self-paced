@@ -10,7 +10,7 @@ void display(int arr[],int n)
     cout<<endl;
 }
 int main()
-{
+{                                                                     // METHOD 1 : 
      int n;
     cout<<"Enter the size of an array\n";
     cin>>n;
