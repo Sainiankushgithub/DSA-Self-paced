@@ -11,7 +11,21 @@ void display(int arr[],int n)
 }
 bool givenSum(int arr[],int n,int sum)                       // HERE WE USE AGAIN A WINDOW SLIDING TECHNIQUE
 {
-
+    int curr=0,s=0;
+    for(int e=0;e<n;e++)
+    {
+        curr+=arr[e];
+        while(sum<curr)
+        {
+            curr-=arr[s];
+            s++;
+        }
+        if(curr==sum)
+        {
+            return true;
+        }
+    }
+    return false;
 }
 int main()
 {
