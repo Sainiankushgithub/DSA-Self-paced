@@ -9,6 +9,15 @@ void display(int arr[],int n)
     }
     cout<<endl;
 }
+int getsum(int arr[],int n,int l,int r)
+{
+    int curr=0;
+    for(int i=l;i<=r;i++)
+    {
+        curr+=arr[i];
+    }
+    return curr;
+}
 int main()
 {                                                                     // METHOD 1 : 
      int n;
@@ -22,5 +31,11 @@ int main()
     }
     cout<<"Displaying your array\n";
     display(arr,n);
+    int l,r;
+    cout<<"Enter the starting index of the array\n";
+    cin>>l;
+    cout<<"Enter the last index of an array\n";
+    cin>>r;
+    cout<<"sum is : "<<getsum(arr,n,l,r);
 return 0;
 }
