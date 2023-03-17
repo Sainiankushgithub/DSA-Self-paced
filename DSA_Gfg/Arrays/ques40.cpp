@@ -12,7 +12,7 @@ void display(int arr[],int n)
 int main()
 {
      int n;
-    cout<<"Enter the size of an array\n";                                         // METHOD 2 : 
+    cout<<"Enter the size of an array\n";                                         // METHOD 1 : 
     cin>>n;
     int arr[n];
     cout<<"Enter the numbers of an elements of an array\n";
