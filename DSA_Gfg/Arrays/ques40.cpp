@@ -1,4 +1,4 @@
-// MAXIMUM APPEARING ELEMENT
+// EQULIBRIUM POINT 
 #include<bits/stdc++.h>
 using namespace std;
 void display(int arr[],int n)
