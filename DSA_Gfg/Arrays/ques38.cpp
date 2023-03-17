@@ -16,7 +16,7 @@ int getsum(int arr[],int n,int l,int r)
     {
         curr+=arr[i];
     }
-    return curr;
+    return curr;                                                 // NOT CORRRECT DIDN'T GOT FROM DSA
 }
 int main()
 {                                                                     // METHOD 1 : 
