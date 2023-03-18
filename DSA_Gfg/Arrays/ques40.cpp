@@ -32,7 +32,7 @@ bool EquiPoint(int arr[],int n)
 int main()
 {
      int n;
-    cout<<"Enter the size of an array\n";                                         // METHOD 1 : 
+    cout<<"Enter the size of an array\n";                                         // METHOD 1 :  TO FIND THE EQUILIBRIUM POINT WHERE IT EXIST OR NOT 
     cin>>n;
     int arr[n];
     cout<<"Enter the numbers of an elements of an array\n";
