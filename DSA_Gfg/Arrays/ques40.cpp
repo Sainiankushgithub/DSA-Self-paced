@@ -9,6 +9,26 @@ void display(int arr[],int n)
     }
     cout<<endl;
 }
+bool EquiPoint(int arr[],int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        int ls=0,rs=0;
+        for(int j=0;j<i;j++)
+        {
+            ls+=arr[j];
+        }
+        for(int k=i+1;k<n;k++)
+        {
+            rs+=arr[k];
+        }
+        if(ls==rs)
+        {
+            return true;
+        }
+    }
+    return false;
+}
 int main()
 {
      int n;
@@ -22,5 +42,6 @@ int main()
     }
     cout<<"Displaying your array\n";
     display(arr,n);
+    cout<<"Any Equilibrium point in an array or not : "<<EquiPoint(arr,n);
 return 0;
 }
