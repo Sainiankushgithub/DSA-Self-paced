@@ -1,4 +1,4 @@
-// MAXIMUM PREMIMUM ELEMENTS
+// MAXIMUM APPEARING ELEMENT IN AN ARRAY 
 #include<bits/stdc++.h>
 using namespace std;
 void display(int arr[],int n)
