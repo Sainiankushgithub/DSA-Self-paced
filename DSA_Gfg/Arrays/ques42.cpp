@@ -18,7 +18,23 @@ void display(int arrleft[], int arrright[],int n)
 }
 int maxappear(int arrleft[],int arrright[],int n)
 {
-
+    int freq[100]={0};
+    for(int i=0;i<n;i++)
+    {
+        for(int j=arrleft[i]; j<=arrright[i];j++)
+        {
+            freq[j]+=1;
+        }
+    }
+    int res=0;
+    for(int i=1;i<100;i++)
+    {
+        if(freq[i]>freq[res])
+        {
+            res=i;
+        }
+    }
+    return res;
 }
 int main()
 {
@@ -32,12 +48,13 @@ int main()
     {
         cin>>arrleft[i];
     }
-    cout<<"Enter the numbers of an elements of the right array\n";                       // EFFICIENT SOLUTION 
+    cout<<"Enter the numbers of an elements of the right array\n";
     for(int i=0;i<n;i++)
     {
         cin>>arrright[i];
     }
     cout<<"Displaying your array\n";
     display(arrleft,arrright,n);
+    cout<<"Maximum apperaing element in the array is : "<<maxappear(arrleft,arrright,n);
 return 0;
 }
