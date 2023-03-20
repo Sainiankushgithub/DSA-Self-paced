@@ -1,4 +1,4 @@
-// BINARY SEARCH 
+// BINARY SEARCH RECURSIVE METHOD
 #include<bits/stdc++.h>
 using namespace std;
 void display(int arr[],int n)
