@@ -1,4 +1,4 @@
-// LINEAR SEARCH 
+// BINARY SEARCH 
 #include<bits/stdc++.h>
 using namespace std;
 void display(int arr[],int n)
@@ -9,16 +9,25 @@ void display(int arr[],int n)
     }
     cout<<endl;
 }
-int linearsearch(int arr[],int n,int ele)
+int Binarysearch(int arr[],int n,int ele)
 {
-    int i=0;
-    while(i<n)
+    int low=0;
+    int high=n-1;
+    while(low<=high)
     {
-        if(arr[i]==ele)
+        int mid=(low+high)/2;
+        if(arr[mid]==ele)
         {
-            return i;
+            return mid;
         }
-        i++;
+        if(arr[mid]>ele)
+        {
+            high--;
+        }
+        if(arr[mid]<ele)
+        {
+            low++;
+        }
     }
     return -1;
 }
@@ -36,8 +45,8 @@ int main()
     cout<<"Displaying your array\n";
     display(arr,n);
     int ele;
-    cout<<"Enter the element to be search\n";
+    cout<<"Enter the element to be search \n";
     cin>>ele;
-    cout<<"Element present at the index : "<<linearsearch(arr,n,ele);
-    return 0;
+    cout<<"Element at the index : "<<Binarysearch(arr,n,ele);
+return 0;
 }
