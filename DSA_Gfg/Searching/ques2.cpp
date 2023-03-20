@@ -3,7 +3,7 @@
 using namespace std;
 void display(int arr[],int n)
 {
-    for(int i=0;i<n;i++)
+    for(int i=0;i<n;i++)          
     {
         cout<<arr[i]<<" ";
     }
@@ -12,21 +12,21 @@ void display(int arr[],int n)
 int Binarysearch(int arr[],int n,int ele)
 {
     int low=0;
-    int high=n-1;
+    int high=n-1;                                                              // ITERATIVE METHOD : 
     while(low<=high)
     {
         int mid=(low+high)/2;
-        if(arr[mid]==ele)
+        if(arr[mid]==ele)                                                       // TIME COMPLEXITY : O(LOG n)
         {
             return mid;
         }
-        if(arr[mid]>ele)
+        else if(arr[mid]>ele)
         {
-            high--;
+            high=mid-1;
         }
-        if(arr[mid]<ele)
+        else
         {
-            low++;
+            low=mid+1;
         }
     }
     return -1;
