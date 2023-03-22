@@ -11,8 +11,8 @@ int squareRoot(int n)
     return (i-1);
 }
 int main()
-{
-    int n;
+{                                                                    //     METHOD 1 : NAIVE SOLUTION 
+    int n;                                                           //      THETHA(n)
     cout<<"Enter the number to find its square root\n";
     cin>>n;
     cout<<"Square root of your number is : "<<squareRoot(n);
