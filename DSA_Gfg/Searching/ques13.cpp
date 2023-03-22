@@ -11,7 +11,7 @@ int infinitesorted(int arr[],int ele)
             return i;
         }
         if(arr[i]>ele)
-        {
+        {                                                                    // METHOD 1 : NAIVE SOLUTION 
             return -1;
         }
         i++;
