@@ -28,7 +28,7 @@ int main()                                    // NAIVE SOLUTION :
 {
     // int arr[]={5,10,20,15,7};                      // LET ASSUME THIS IS OUR ROTATED SORTED ARRAY
     // int arr[]={5,10};
-    // int arr[]={10};
+    // int arr[]={10};                                                    // TEST CASES : 
     int arr[]={5,10,20,15,7,80}; // HERE MAY BE 80 OR 20 
     int n=sizeof(arr)/sizeof(int);
     cout<<"Peak element in the array is : "<<findpeak(arr,n);
