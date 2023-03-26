@@ -15,8 +15,8 @@ bool twopointer(int arr[],int n,int x)
     {
         for(int j=i+1;j<n;j++)
         {
-            if(arr[i]+arr[j]==x)                                                            // NAVIE SOLUTION : 
-            {
+            if(arr[i]+arr[j]==x)                                                            // NAVIE SOLUTION : O(n^2)
+            {                                                                               // AUX SPACE : O(1)
                 return true;
             }
         }
