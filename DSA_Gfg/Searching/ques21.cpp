@@ -11,7 +11,7 @@ void display(int arr[],int n)
 }
 bool tripletsum(int arr[],int n,int x)
 {
-    for(int i=0;i<n-2;i++)
+    for(int i=0;i<n-2;i++)                                                    // METHOD 1 : 
     {
         for(int j=i+1;j<n;j++)
         {
@@ -28,13 +28,12 @@ bool tripletsum(int arr[],int n,int x)
 }
 int main()
 {
-    int n;
-    cout<<"Enter the size of an array\n";
+    int n;                                                                         // NAIVE SOLUTION : 
     cin>>n;
     int arr[n];
-    cout<<"Enter the numbers of an array elements\n";
+    cout<<"Enter the numbers of an array elements\n"; 
     for(int i=0;i<n;i++)
-    {
+    {                                                                                      
         cin>>arr[i];
     }
     cout<<"Displaying your array\n";
