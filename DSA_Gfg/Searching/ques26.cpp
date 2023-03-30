@@ -12,9 +12,9 @@ void display(int arr[],int n)
 }
 int repeatele(int arr[],int n)
 {
-    for(int i=0;i<n-1;i++)                                                  // NAIVE SOLUTION : 
-    {
-        for(int j=i+1;j<n;j++)
+    for(int i=0;i<n-1;i++)                                                  // SUPER NAIVE SOLUTION :     
+    {                                                                       // TIME : O(n^2)
+        for(int j=i+1;j<n;j++)                                              // SPACE : O(1)
         {
             if(arr[i]==arr[j])
             {
