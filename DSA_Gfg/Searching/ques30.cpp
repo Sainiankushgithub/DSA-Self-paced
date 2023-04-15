@@ -17,7 +17,7 @@ int minPage(int arr[],int n,int k)
     }
     if(n==1)
     {
-        return arr[0];
+        return arr[0];                                                // ERROR SUM WAS NOT DECLARE IN THIS SCOPE 
     }
     int res=INT_MAX;
     for(int i=1;i<n;i++)
