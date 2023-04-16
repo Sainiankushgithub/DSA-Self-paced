@@ -11,7 +11,7 @@ void display(int *arr,int n)
 }
 void selectionSort(int *arr,int n)
 {
-    int temp[n];
+    int temp[n];                                          // THIS IMPLEMENTATION REQUIRED EXTRFA AUXILLARY SPACE
     for(int i=0;i<n;i++)
     {
         int min_ind=0;
