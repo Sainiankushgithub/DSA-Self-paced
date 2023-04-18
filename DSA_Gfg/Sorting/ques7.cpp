@@ -1,4 +1,4 @@
-// MERGE FUNCTION OF MERGE SORT
+// MERGE SORT
 #include<bits/stdc++.h>
 using namespace std;
 void display(int arr[],int n)
@@ -8,6 +8,16 @@ void display(int arr[],int n)
         cout<<arr[i]<<" ";
     }
     cout<<endl;
+}
+void mergeSort(int arr[],int l,int r)
+{
+    if(r>l)
+    {
+        int m=l+(r-l)/2;
+        mergeSort(arr,l,m);
+        mergeSort(arr,m+1,r);
+        merge(arr,l,m,r);
+    }                                 // error NO MATCHING FUNCTION CALL TO merge 
 }
 void merge(int arr[],int low,int mid,int high)
 {
@@ -56,8 +66,7 @@ int main()
     }
     cout<<"Displaying your entered array\n";
     display(arr,n);
-    cout<<"Displaying your through merge function of merge sort\n";
-    merge(arr,0,0+n/2,n-1);
-    display(arr,n);
+    cout<<"Displaying your through merge sort\n";
+    mergeSort(arr,0,n-1);
 return 0;
 }
