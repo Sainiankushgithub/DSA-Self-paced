@@ -57,7 +57,7 @@ void selectionSortI(int arr[],int n)
 // SELECTION SORT SECOND WAY
 void selectionSortII(int arr[],int n)
 {
-    for(int i=0;i<n;i++)
+    for(int i=0;i<n-1;i++)
     {
         int min_ind=i;
         for(int j=i+1;j<n;j++)
@@ -72,6 +72,21 @@ void selectionSortII(int arr[],int n)
         arr[min_ind]=temp;
     }
 
+}
+// INSERTION SORT 
+void insertionSort(int arr[],int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        int key=arr[i];
+        int j=i-1;
+        while(j>=0&&arr[j]>key)
+        {
+            arr[j+1]=arr[j];
+            j--;
+        }
+        arr[j+1]=key;
+    }
 }
 int main()
 {
@@ -92,8 +107,11 @@ int main()
     // cout<<"Displaying your array through selection sort\n";
     // selectionSortI(arr,n);
     // display(arr,n);
-    cout<<"Displaying your array through selection sort\n";
+    /*cout<<"Displaying your array through selection sort\n";
     selectionSortII(arr,n);
+    display(arr,n);*/
+    cout<<"Displaying your array through insertion sort\n";
+    insertionSort(arr,n);
     display(arr,n);
     return 0;
 }
