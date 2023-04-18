@@ -54,6 +54,25 @@ void selectionSortI(int arr[],int n)
         arr[i]=temp[i];
     }
 }
+// SELECTION SORT SECOND WAY
+void selectionSortII(int arr[],int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        int min_ind=i;
+        for(int j=i+1;j<n;j++)
+        {
+            if(arr[min_ind]>arr[j])
+            {
+                min_ind=j;
+            }
+        }
+        int temp=arr[i];
+        arr[i]=arr[min_ind];
+        arr[min_ind]=temp;
+    }
+
+}
 int main()
 {
     int n;
@@ -70,8 +89,11 @@ int main()
     /*cout<<"Displaying your array through bubble sort\n";
     bubbleSort(arr,n);
     display(arr,n);*/
+    // cout<<"Displaying your array through selection sort\n";
+    // selectionSortI(arr,n);
+    // display(arr,n);
     cout<<"Displaying your array through selection sort\n";
-    selectionSortI(arr,n);
+    selectionSortII(arr,n);
     display(arr,n);
     return 0;
 }
