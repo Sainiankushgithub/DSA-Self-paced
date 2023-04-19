@@ -13,8 +13,8 @@ void merge(int arr1[],int arr2[],int n1,int n2,int result[])
 {
     for(int i=0;i<n1;i++)
     {
-        result[i]=arr1[i];
-    }
+        result[i]=arr1[i];                                        // TIME : O((n1+n2))*log(n1+n2))
+    }                                                             // AUX SPACE : THETA (n1+n2)
     for(int i=0;i<n2;i++)
     {                                                               // NAIVE IMPLEMENTATION
         result[n1+i]=arr2[i];
