@@ -16,10 +16,10 @@ void mergeSort(int arr[],int l,int r)
         int m=l+(r-l)/2;
         mergeSort(arr,l,m);
         mergeSort(arr,m+1,r);
-        merge(arr,l,m,r);
+        merge_(arr,l,m,r);
     }                                 // error NO MATCHING FUNCTION CALL TO merge 
 }
-void merge(int arr[],int low,int mid,int high)
+void merge_(int arr[],int low,int mid,int high)
 {
     int n1=mid-low+1;
     int n2=high-mid;
