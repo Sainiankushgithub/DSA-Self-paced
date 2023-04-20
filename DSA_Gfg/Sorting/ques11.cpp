@@ -11,26 +11,32 @@ void display(int arr[],int n)
 }
 void Intersection(int arr1[],int arr2[],int n1,int n2)
 {
-    int result[n1+n2];
-    for(int i=0;i<n1;i++)
+    int arr[n1+n2];
+    int i=0,j=0,k=0;
+    while(i<n1&&j<n2)
     {
-        result[i]=arr1[i];
-    }
-    for(int i=0;i<n2;i++)
-    {
-        result[n1+i]=arr2[i];
-    }
-    sort(result,result+n1+n2);
-    for(int i=1;i<n1+n2-1;i++)                                      // MY METHOD 1 : 
-    {                                                                // HERE I CREATED A EXTRA AUXILLARY SPCAE THETA (n1+n2)
-        if(result[i]==result[i-1] && result[i]!=result[i+1])
+        if(arr1[i]<=arr2[j])
         {
-            cout<<result[i]<<" ";
+            arr[k++]=arr1[i++];
+        }
+        else{
+            arr[k++]=arr2[j++];
         }
     }
-    if(result[n1+n2-1]==result[n1+n2-2])
+    while(i<n1)
     {
-        cout<<result[n1+n2-1]<<" ";
+        arr[k++]=arr1[i++];
+    }
+    while(j<n2)
+    {
+        arr[k++]=arr2[j++];
+    }
+    for(int i=0;i<n1+n2;i++)                                         // MY SECOND METHOD : 
+    {
+       if(arr[i]==arr[i-1] && arr[i]!=arr[i+1])
+        {
+            cout<<arr[i]<<" ";
+        }
     }
 }
 int main()
