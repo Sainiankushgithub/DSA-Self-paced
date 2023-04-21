@@ -40,7 +40,7 @@ void Union(int arr1[],int arr2[],int n1,int n2)
             i++;
             j++;
         }
-    }
+    }                                                                    // EFFICIENT SOLUTION : TIME : THETA (n1+n2)
     while(i<n1)
     {
         if(arr1[i]==arr1[i-1] && i>0)
