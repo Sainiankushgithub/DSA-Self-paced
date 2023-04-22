@@ -21,16 +21,12 @@ void Intersection(int arr1[],int arr2[],int n1,int n2)
         result[n1+i]=arr2[i];
     }
     sort(result,result+n1+n2);
-    for(int i=1;i<n1+n2-1;i++)                                      // MY METHOD 1 : 
+    for(int i=1;i<n1+n2;i++)                                      // MY METHOD 1 : 
     {                                                                // HERE I CREATED A EXTRA AUXILLARY SPCAE THETA (n1+n2)
         if(result[i]==result[i-1] && result[i]!=result[i+1])
         {
             cout<<result[i]<<" ";
         }
-    }
-    if(result[n1+n2-1]==result[n1+n2-2])
-    {
-        cout<<result[n1+n2-1]<<" ";
     }
 }
 int main()

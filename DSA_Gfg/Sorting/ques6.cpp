@@ -13,6 +13,7 @@ void merge(int arr[],int low,int mid,int high)
 {
     int n1=mid-low+1;
     int n2=high-mid;
+    cout<<"n1="<<n1<<" "<<"n2="<<n2<<endl;
     int left[n1],right[n2];
     for(int i=0;i<n1;i++)
     {
@@ -20,12 +21,16 @@ void merge(int arr[],int low,int mid,int high)
     }
     for(int i=0;i<n2;i++)
     {
-        right[i]=arr[mid+i+1];
+        right[i]=arr[n1+i];
     }
+    cout<<"Displaying your left[]\n";
+    display(left,n1);
+    cout<<"Displaying your right[]\n";
+    display(right,n2);
     int i=0,j=0,k=low;
     while(i<n1&&j<n2)
     {
-        if(left[i]<=right[j])
+        if(left[i]<right[j])
         {
             arr[k++]=left[i++];
         }
@@ -57,7 +62,7 @@ int main()
     cout<<"Displaying your entered array\n";
     display(arr,n);
     cout<<"Displaying your through merge function of merge sort\n";
-    merge(arr,0,0+n/2,n-1);
+    merge(arr,0,(0+(n-1))/2,n-1);
     display(arr,n);
 return 0;
 }

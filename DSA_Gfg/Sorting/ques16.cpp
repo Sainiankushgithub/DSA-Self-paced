@@ -12,7 +12,7 @@ void display(int arr[],int n)
 int CountInversion(int arr[],int n)
 {
     int count=0;
-    for(int i=0;i<n;i++)                        // e.g arr[]={2,4,1,3,5} here inversion we have (2,1),(4,1),(4,3)
+    for(int i=0;i<n-1;i++)                        // e.g arr[]={2,4,1,3,5} here inversion we have (2,1),(4,1),(4,3)
     {                                           //                  SO OUR COUNT BECOME : 3 
         for(int j=i+1;j<n;j++)                  // A PAIR (arr[i],arr[j]) FROMS AN INVERSION WHEN I<J AND arr[i]>arr[j]
         {
