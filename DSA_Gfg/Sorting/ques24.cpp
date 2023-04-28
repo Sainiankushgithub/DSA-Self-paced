@@ -22,7 +22,7 @@ int lomutoPartition(int arr[],int l,int h)
         }
     }
     swap(arr[i+1],arr[h]);
-    return i+1;
+    return (i+1);
 }
 int smallest(int arr[],int n,int k)
 {
