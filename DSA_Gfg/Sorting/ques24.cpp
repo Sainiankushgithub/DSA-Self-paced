@@ -30,7 +30,7 @@ int smallest(int arr[],int n,int k)
     while(lo<=hi)
     {
         int p=lomutoPartition(arr,lo,hi);
-        if(p==k-1)
+        if(p==k-1)                                         // GOT ERROR IN THIS CODE 
         {
             return p;
         }
