@@ -1,4 +1,4 @@
-// 
+// DISPLAYING YOUR MATRIX THROUGH FUNCTION USING DYNAMIC MEMMORY ALLOCATION
 #include<bits/stdc++.h>
 using namespace std;
 void display(int **matrix,int row,int column)
