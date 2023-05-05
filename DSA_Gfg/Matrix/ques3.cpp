@@ -30,7 +30,7 @@ int main()
     */
     int *mat[row];                        // WE CAN DECLARE THIS WAY TOO
     for(int i=0;i<row;i++)
-    {
+    {                                    // THIS DECLARATION IS CALLED ARRAY OF POINTER
         mat[i]=new int [column];
     }
     for(int i=0;i<row;i++)
