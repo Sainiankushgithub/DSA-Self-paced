@@ -5,7 +5,7 @@ using namespace std;
 #define MAX 1000
 class hashTable
 {
-    public :
+    private :
     bool table[MAX+1][2];
     public:
     void insert(int arr[],int n);
