@@ -5,7 +5,7 @@ bool checkprime(int n)
 {
     if(n==1)
     {
-        return true;
+        return false;
     }
     if(n==2)
     {
@@ -25,7 +25,7 @@ bool checkprime(int n)
 void displayprime(int num)
 {
     int i=1;
-    while(i<num)
+    while(i<=num)
     {
         if(checkprime(i))
         {
