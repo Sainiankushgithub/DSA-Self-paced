@@ -1,4 +1,4 @@
-// SUBARRAY WITH ZERO SUM 
+// SUBARRAY WITH ZERO SUM  NAIVE SOLUTION
 #include<bits/stdc++.h>
 using namespace std;
 void display(int arr[],int n)

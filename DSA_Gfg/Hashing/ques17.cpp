@@ -1,4 +1,4 @@
-// PAIR WITH GIVEN SUM EFFICIENT APPROACH 
+// SUB ARRAY WITH GIVEN SUM 
 #include<bits/stdc++.h>
 using namespace std;
 void display(int arr[],int n)
@@ -9,18 +9,18 @@ void display(int arr[],int n)
     }
     cout<<endl;
 }
-bool Pairgiven(int arr[],int n,int sum)
+bool SubgivenSum(int arr[],int n,int sum)
 {
-    unordered_set<int>h;
     for(int i=0;i<n;i++)
     {
-        if(h.find(sum-arr[i])!=h.end())
+        int curr_sum=0;
+        for(int j=i;j<n;j++)
         {
-            return true;
-        }
-        else
-        {
-            h.insert(arr[i]);
+            curr_sum+=arr[j];
+            if(curr_sum==sum)
+            {
+                return true;
+            }
         }
     }
     return false;
@@ -39,8 +39,8 @@ int main()
     cout<<"Displaying your array elements\n";
     display(arr,n);
     int sum;
-    cout<<"Enter the sum to check whether given sum is present in the array or not\n";
+    cout<<"Enter the sum to check whether given sum present in it or not\n";
     cin>>sum;
-    cout<<"Given sum pair is prsent or not : "<<Pairgiven(arr,n,sum);
-return 0;
+    cout<<"Given sum present or not : "<<SubgivenSum(arr,n,sum)<<endl;
+    return 0;
 }
