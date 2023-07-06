@@ -14,7 +14,7 @@ bool Pairgiven(int arr[],int n,int sum)
     unordered_set<int>h;
     for(int i=0;i<n;i++)
     {
-        if(sum-arr[i]!=h.end())
+        if(h.find(sum-arr[i])!=h.end())
         {
             return true;
         }
