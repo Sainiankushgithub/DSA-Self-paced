@@ -1,4 +1,4 @@
-// LONGEST SUBARRAY WITH GIVEN SUM NAIVE SOLUTION
+// LONGEST SUBARRAY WITH GIVEN SUM WITH MAXIMUM LENGTH -> NAIVE SOLUTION
 #include<bits/stdc++.h>
 using namespace std;
 void display(int arr[],int n)
