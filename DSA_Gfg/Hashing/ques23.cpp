@@ -1,4 +1,4 @@
-// LONGEST COMMON SUNARRAY WITH GIVEN SUM 
+// LONGEST COMMON SUNARRAY WITH GIVEN SUM -> NAIVE SOLUTION
 #include<bits/stdc++.h>
 using namespace std;
 void display(bool arr[],int n)
