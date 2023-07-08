@@ -1,4 +1,4 @@
-//  LONGEST SUBARRAY WITH EQUAL 0s and 1s NAIVE SOLUTION
+//  LONGEST SUBARRAY WITH EQUAL 0s and 1s EFFICIENT SOLUTION
 #include<bits/stdc++.h>
 using namespace std;
 void display(bool arr[],int n)
@@ -11,27 +11,23 @@ void display(bool arr[],int n)
 }
 int LonSubArray(bool arr[],int n)
 {
-    int res=0;
-    for(int i=0;i<n;i++)
-    {
-        int c0=0,c1=0;
-        for(int j=i;j<n;j++)
-        {
-            if(arr[j]==0)
-            {
-                c0++;
-            }
-            else
-            {
-                c1++;
-            }
-            if(c0==c1)
-            {
-                res=max(res,c0+c1);
-            }
+    unordered_map<int, int> countMap;
+    int maxLength=0;
+    int count=0;
+
+    for (int i=0;i<n;i++) {
+        count += (arr[i]==0)?1:-1;
+
+        if (count==0) {
+            maxLength=i + 1;
+        } else if (countMap.find(count)!=countMap.end()) {
+            maxLength=max(maxLength, -countMap[count]);
+        } else {
+            countMap[count]=i;
         }
     }
-    return res;
+
+    return maxLength;
 }
 int main()
 {
