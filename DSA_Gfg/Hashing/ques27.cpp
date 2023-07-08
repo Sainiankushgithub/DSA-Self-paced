@@ -11,21 +11,21 @@ void display(int arr[],int n)
 }
 int LongestSub(int arr[],int n)
 {
-    sort(arr,arr+n);
-    int res=1,curr=1;
-    for(int i=1;i<n;i++)
+    unordered_set<int>h(arr,arr+n);
+    int res=1;
+    for(auto x:h)
     {
-        if(arr[i]==arr[i-1]+1)
+        if(h.find(x-1)==h.end())
         {
-            curr++;
-        }
-        else if(arr[i]!=arr[i-1])
-        {
+            int curr=1;
+            while(h.find(x+curr)!=h.end())
+            {
+                curr++;
+            }
             res=max(res,curr);
-            curr=1;
         }
     }
-    return max(res,curr);
+    return res;
 }
 int main()
 {
