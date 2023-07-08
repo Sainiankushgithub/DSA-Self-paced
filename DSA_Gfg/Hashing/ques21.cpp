@@ -1,0 +1,27 @@
+//  LONGEST SUBARRAY WITH EQUAL 0s and 1s NAIVE SOLUTION
+#include<bits/stdc++.h>
+using namespace std;
+void display(int arr[],int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+}
+
+int main()
+{
+    int n;
+    cout<<"Enter the size of an array\n";
+    cin>>n;
+    int arr[n];
+    cout<<"Enter the number of an elements of an array\n";
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    cout<<"Displaying your array elements\n";
+    display(arr,n);
+return 0;
+}
