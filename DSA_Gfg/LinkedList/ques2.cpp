@@ -13,11 +13,10 @@ struct Node
 };
 void PrintList(Node *head)
 {
-    Node*curr=head;
-    while(curr!=NULL)
+    while(head!=NULL)
     {
-        cout<<(curr->name)<<endl;
-        curr=curr->next;
+        cout<<(head->name)<<endl;
+        head=head->next;
     }
 }
 int main()
