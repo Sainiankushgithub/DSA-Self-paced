@@ -13,7 +13,9 @@ struct Node
 };
 Node* BeginFunc(Node* head,int x)
 {
-    
+    Node* temp=new Node(x);
+    temp->next=head;
+    return temp;
 }
 void display(Node*head)
 {
@@ -26,11 +28,11 @@ void display(Node*head)
 }
 int main()
 {
-    Node*head=new Node(10);
-    head->next=new Node(20);
-    head->next->next=new Node(30);
-    head->next->next->next=new Node(40);
-    cout<<"Displaying your singly linked list data using recursion : \n";
+   Node*head=NULL;
+   head=BeginFunc(head,30);
+   head=BeginFunc(head,20);
+   head=BeginFunc(head,10);
+   cout<<"Displaying your entered elements : \n";
     display(head);
 return 0;
 }
