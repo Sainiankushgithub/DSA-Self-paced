@@ -1,4 +1,4 @@
-// IMPLEMENTATION OF BEGIN FUNCTION 
+// IMPLEMENTATION OF  INSERT AT THE BEGIN 
 #include<bits/stdc++.h>
 using namespace std;
 struct Node
