@@ -1,4 +1,4 @@
-// SIMPLE STACK IMPLEMENTATION IN STACK
+// SIMPLE STACK IMPLEMENTATION 
 #include<bits/stdc++.h>
 using namespace std;
 struct Mystack
