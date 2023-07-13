@@ -25,7 +25,15 @@ int main()
     s.pop();
 
     // AFTER REMOVING THE TOP ELEMENT
-    
+
     display(s);
+
+    if(s.empty())
+    {
+        cout<<"yes your stack is empty :\n";
+    }
+    else{
+        cout<<"No your stack is not empty :\n";
+    }
 return 0;
 }
