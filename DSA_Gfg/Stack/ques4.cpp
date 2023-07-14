@@ -1,27 +1,49 @@
-// CHECK FOR BALANCCED PARETHESIS 
+// BALANCED MATCHING THE PARENTHESIS 
 #include<bits/stdc++.h>
 using namespace std;
-bool isBalanced(string str)
+bool Matching(char a,char b)
+{
+    return(a=='('&&b==')'||a=='['&&b==']'||a=='{'&&b=='}');
+}
+bool Balancedparen(string str)
 {
     stack<char>s;
-
-}
-bool matching(char a,char b)
-{
-    
+    for(char x:str)
+    {
+        if(x=='('||x=='['||x=='{')
+        {
+            s.push(x);
+        }
+        else
+        {
+            if(s.empty()==true)
+            {
+                return false;
+            }
+            if(Matching(s.top(),x)==false)
+            {
+                return false;
+            }
+            else
+            {
+                s.pop();
+            }
+        }
+    }
+    return (s.empty()==true);
 }
 int main()
 {
     string str;
-    cout<<"Enter the parethesis :\n";
+    cout<<"Enter the parenthesis : ";
     cin>>str;
-    if(isBalanced(str)==true)
+    if(Balancedparen(str))
     {
-    cout<<"YES  ! Parethesis matching :\n";
+        cout<<"YES !!! Parenthesis Balanced : "<<str<<endl;
     }
     else
     {
-        cout<<"NO  ! Parethesis not matching :\n";
+        cout<<"NO !!! Parenthesis not Balanced : "<<str<<endl;
     }
 return 0;
 }
