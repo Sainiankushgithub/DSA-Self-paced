@@ -1,4 +1,4 @@
-// STOCK SPAN PROBLEM
+// STOCK SPAN PROBLEM NAIVE SOLUTION
 #include<bits/stdc++.h>
 using namespace std;
 void display(int arr[],int n)
