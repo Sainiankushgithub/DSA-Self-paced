@@ -14,14 +14,13 @@ class Node
 };
 bool SearchLinkedList(Node*head,int value)
 {
-    Node*curr=head;
-    while(curr!=NULL)
+    while(head!=NULL)
     {
-        if(curr->data==value)
+        if(head->data==value)
         {
             return true;
         }
-        curr=curr->next;
+        head=head->next;
     }
     return false;
 }
