@@ -1,39 +1,56 @@
 // SEARCH IN A LINKED LIST 
 #include<bits/stdc++.h>
 using namespace std;
-struct Node {
+class Node
+{
+    public:
+    Node*next;
     int data;
-    Node* next;
+    Node(int x)
+    {
+        data=x;
+        next=NULL;
+    }
 };
-bool searchLinkedList(Node* head,int value) {
-    Node* current=head;
-    while (current!=nullptr) {
-        if (current->data==value) {
+bool SearchLinkedList(Node*head,int value)
+{
+    Node*curr=head;
+    while(curr!=NULL)
+    {
+        if(curr->data==value)
+        {
             return true;
         }
-        current = current->next;
+        curr=curr->next;
     }
     return false;
 }
-int main() {
-    Node* node1 =new Node();
-    Node* node2 =new Node();
-    Node* node3 =new Node();
-    node1->data=10;
-    node2->data=20;
-    node3->data=30;
-    node1->next=node2;
-    node2->next=node3;
-    node3->next=nullptr;
-    int value = 20;
-    if (searchLinkedList(node1,value)) {
-        cout<<"Value " << value<<" found in the linked list."<<endl;
-    } else {
-        cout<<"Value " << value<<" not found in the linked list."<<endl;
+void display(Node*head)
+{
+    while(head!=NULL)
+    {
+        cout<<head->data<<" ";
+        head=head->next;
     }
-    delete node1;
-    delete node2;
-    delete node3;
-
-    return 0;
+    cout<<endl;
+}
+int main()
+{
+    Node*head=new Node(10);
+    head->next=new Node(20);
+    head->next->next=new Node(30);
+    cout<<"Displaying your linked list elements :\n";
+    display(head);
+    int value;
+    cout<<"Enter the value to be search :\n";
+    cin>>value;
+    if(SearchLinkedList(head,value))
+    {
+        cout<<"Linked list element found : "<<value<<endl;
+    }
+    else
+    {
+        cout<<"Linked list element not found : "<<value<<endl;
+    }
+return 0;
 }
