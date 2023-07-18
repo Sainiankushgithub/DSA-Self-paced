@@ -12,17 +12,22 @@ class Node
         next=NULL;
     }
 };
-bool SearchLinkedList(Node*head,int value)
+int SearchLinkedList(Node*head,int value)
 {
+    int pos=1;
     while(head!=NULL)
     {
         if(head->data==value)
         {
-            return true;
+            return pos;
         }
-        head=head->next;
+        else
+        {
+            head=head->next;
+            pos++;
+        }
     }
-    return false;
+    return -1;
 }
 void display(Node*head)
 {
@@ -43,13 +48,14 @@ int main()
     int value;
     cout<<"Enter the value to be search :\n";
     cin>>value;
-    if(SearchLinkedList(head,value))
+    int s=SearchLinkedList(head,value);
+    if(s==-1)
     {
-        cout<<"Linked list element found : "<<value<<endl;
+        cout<<"Linked list element "<<value<<" not found : "<<endl;
     }
     else
     {
-        cout<<"Linked list element not found : "<<value<<endl;
+        cout<<"Linked list element "<<value<<" found at position : "<<s<<endl;
     }
 return 0;
 }
