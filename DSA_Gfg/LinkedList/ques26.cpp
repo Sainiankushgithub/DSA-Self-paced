@@ -1,4 +1,4 @@
-// INSERT AT THE BEGIN IN CIRCULAR LINKED LIST EFFICIENT SOLUTION 
+// DELETE THE FIRST NODE  IN CIRCULAR LINKED LIST 
 #include<bits/stdc++.h>
 using namespace std;
 struct Node
@@ -25,18 +25,26 @@ void display(Node*head)
     } while (p!=head);
     cout<<endl;
 }
-Node*InsertBegin(Node*head,int x)
+Node*DelFirst(Node*head)
 {
-    Node*temp=new Node(x);
     if(head==NULL)
     {
-        temp->next=temp;
-        return temp;
+        return NULL;
     }
-    else
+    if(head->next==head)
     {
-       
+        delete head;
+        return NULL;
     }
+    Node*curr=head;
+    Node*temp=head->next;
+    while(curr->next!=head)
+    {
+        curr=curr->next;
+    }
+    delete curr->next;
+   curr->next=temp;
+    return temp;
 }
 int main()
 {
@@ -49,8 +57,8 @@ int main()
     head->next->next->next=head;
     cout<<"Displaying your doubly linked list :\n";
     display(head);
-    head=InsertBegin(head,5);
-    cout<<"Displaying your circular linked list after inserting at the Begin :\n";
+    head=DelFirst(head);
+    cout<<"Displaying your circular linked list after Deleting the first Node:\n";
     display(head);
 return 0;
 }

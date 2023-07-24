@@ -57,7 +57,7 @@ int main()
     cout<<"Displaying your doubly linked list :\n";
     display(head);
     head=InsertEnd(head,40);
-    cout<<"Displaying your circular linked list after inserting at the first :\n";
+    cout<<"Displaying your circular linked list after inserting at the End :\n";
     display(head);
 return 0;
 }
