@@ -25,6 +25,27 @@ void display(Node*head)
     } while (p!=head);
     cout<<endl;
 }
+Node*DelFirst(Node*head)
+{
+    if(head==NULL)
+    {
+        return NULL;
+    }
+    if(head->next==head)
+    {
+        delete head;
+        return NULL;
+    }
+    Node*curr=head;
+    Node*temp=head->next;
+    while(curr->next!=head)
+    {
+        curr=curr->next;
+    }
+    delete curr->next;
+    curr->next=temp;
+    return temp;
+}
 Node*DelKNode(Node*head,int k)
 {
     if(head==NULL)
@@ -33,8 +54,7 @@ Node*DelKNode(Node*head,int k)
     }
     if(k==1)
     {
-         delete head;
-         return nullptr;
+        return (DelFirst(head));
     }
     Node*curr=head;
     for(int i=0;i<k-2;i++)
