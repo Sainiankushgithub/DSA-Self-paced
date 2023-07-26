@@ -1,4 +1,4 @@
-// DELETE THE LAST NODE  IN CIRCULAR LINKED LIST 
+// DELETE THE FIRST NODE  IN CIRCULAR LINKED LIST EFFICIENT SOLUTION 
 #include<bits/stdc++.h>
 using namespace std;
 struct Node
@@ -25,7 +25,7 @@ void display(Node*head)
     } while (p!=head);
     cout<<endl;
 }
-Node*DelLast(Node*head)
+Node*DelFirst(Node*head)
 {
     if(head==NULL)
     {
@@ -36,13 +36,10 @@ Node*DelLast(Node*head)
         delete head;
         return NULL;
     }
-    Node*curr=head;
-    while(curr->next->next!=head)
-    {
-        curr=curr->next;
-    }
-    delete curr->next;
-   curr->next=head;
+    head->data=head->next->data;
+    Node*temp=head->next;
+    head->next=head->next->next;
+    delete temp;
     return head;
 }
 int main()
@@ -56,7 +53,7 @@ int main()
     head->next->next->next=head;
     cout<<"Displaying your doubly linked list :\n";
     display(head);
-    head=DelLast(head);
+    head=DelFirst(head);
     cout<<"Displaying your circular linked list after Deleting the first Node:\n";
     display(head);
 return 0;

@@ -1,4 +1,4 @@
-// DELETE THE FIRST NODE  IN CIRCULAR LINKED LIST 
+// DELETE THE FIRST NODE  IN CIRCULAR LINKED LIST  NAIVE SOLUTION 
 #include<bits/stdc++.h>
 using namespace std;
 struct Node

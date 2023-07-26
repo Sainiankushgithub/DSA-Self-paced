@@ -1,4 +1,4 @@
-// DELETE THE LAST NODE  IN CIRCULAR LINKED LIST 
+// DELETE KTH NODE FROM CIRCUALR LINKED LIST 
 #include<bits/stdc++.h>
 using namespace std;
 struct Node
@@ -25,7 +25,7 @@ void display(Node*head)
     } while (p!=head);
     cout<<endl;
 }
-Node*DelLast(Node*head)
+Node*DelFirst(Node*head)
 {
     if(head==NULL)
     {
@@ -37,12 +37,31 @@ Node*DelLast(Node*head)
         return NULL;
     }
     Node*curr=head;
-    while(curr->next->next!=head)
+    Node*temp=head->next;
+    while(curr->next!=head)
     {
         curr=curr->next;
     }
     delete curr->next;
-   curr->next=head;
+    curr->next=temp;
+    return temp;
+}
+Node*DelKNode(Node*head,int k)
+{
+    if(head==NULL)
+    {
+        return NULL;
+    }
+    if(k==1)
+    {
+        return (DelFirst(head));
+    }
+    Node*curr=head;
+    for(int i=0;i<k-2;i++)
+    {
+        curr=curr->next;
+    }
+    curr->next=curr->next->next;
     return head;
 }
 int main()
@@ -53,10 +72,14 @@ int main()
     Node*head=new Node(10);
     head->next=new Node(20);
     head->next->next=new Node(30);
-    head->next->next->next=head;
+    head->next->next->next=new Node(40);
+    head->next->next->next->next=head;
     cout<<"Displaying your doubly linked list :\n";
     display(head);
-    head=DelLast(head);
+    int k;
+    cout<<"Enter the kth node to be deleted :\n";
+    cin>>k;
+    head=DelKNode(head,k);
     cout<<"Displaying your circular linked list after Deleting the first Node:\n";
     display(head);
 return 0;
