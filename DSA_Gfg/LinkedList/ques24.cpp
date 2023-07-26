@@ -35,7 +35,12 @@ Node*InsertBegin(Node*head,int x)
     }
     else
     {
-       
+        temp->next=head->next;
+        head->next=temp;
+        int t=head->data;
+        head->data=temp->data;
+        temp->data=t;
+        return head;
     }
 }
 int main()
