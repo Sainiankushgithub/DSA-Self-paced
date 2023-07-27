@@ -20,11 +20,15 @@ void display(Node*head)
         return ;
     }
     Node*p=head;
-    do
+    while(true)
     {
         cout<<p->data<<" ";
         p=p->next;
-    } while (p!=head);
+        if(p==head)
+        {
+            break;
+        }
+    }
     cout<<endl;
 }
 Node*InsertBeginCD(Node*head,int x)
@@ -40,7 +44,13 @@ Node*InsertBeginCD(Node*head,int x)
     temp->next=head;
     head->prev->next=temp;
     head->prev=temp;
-    return temp;
+
+    // Update the "prev" pointer of the last node to the newly inserted node.
+
+    Node*last=head->prev;
+    last->prev=temp;
+    head=temp;
+    return head;
 }
 int main()
 {
