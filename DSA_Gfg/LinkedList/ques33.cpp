@@ -33,21 +33,13 @@ Node*sortInsert(Node*head,int x)
         return temp;
     }
     Node*curr=head;
-    while(curr->next!=nullptr)                     // MY SOLUTION ACCORDING TO ME 
+    while(curr->next!=nullptr&& (curr->next->data)<x)                     // GFG SOLUTION  
     {
-        if((curr->next->data)>x)
-        {
-            temp->next=curr->next;
-            curr->next=temp;
-            return head;
-        }
-        else
-        {
-            curr=curr->next;
-        }
+        curr=curr->next;
     }
-        curr->next=temp;
-        return head;
+    temp->next=curr->next;
+    curr->next=temp;
+    return head;
 }
 int main()
 {
