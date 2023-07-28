@@ -1,4 +1,4 @@
-// REVERSE A LINKED LIST USING RECURSION  PART 1 
+// REVERSE A LINKED LIST USING RECURSION  PART 2 
 #include<bits/stdc++.h>
 using namespace std;
 struct Node
