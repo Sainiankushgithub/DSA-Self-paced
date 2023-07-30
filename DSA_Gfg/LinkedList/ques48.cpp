@@ -40,7 +40,7 @@ Node*InsertFun(Node*head,int x)
 
 */
 
-void MergeTwoList(Node*list1,Node*list2)
+Node* MergeTwoList(Node*list1,Node*list2)
 {
     Node*Merge_head,*Merge_tail;
     while(list1!=nullptr&&list2!=nullptr)
@@ -70,6 +70,7 @@ void MergeTwoList(Node*list1,Node*list2)
         list2=list2->next;
         Merge_tail=Merge_tail->next;
     }
+    return Merge_head;
 }
 int main()
 {
@@ -99,7 +100,8 @@ int main()
     display(list1);
     cout<<"Displaying your list 2 :\n";
     display(list2);
-    MergeTwoList(list1,list2);
-    display()
+   Node*merge= MergeTwoList(list1,list2);
+   cout<<"Displaying the two merged linekd list :\n";
+   display(merge);
 return 0;
 }
