@@ -1,4 +1,4 @@
-// INTERSECTION OF TWO LINKED LIST 
+// INTERSECTION OF TWO LINKED LIST METHOD 1
 #include<bits/stdc++.h>
 using namespace std;
 struct Node
