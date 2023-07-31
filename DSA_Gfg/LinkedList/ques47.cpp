@@ -38,7 +38,14 @@ Node*InsertFun(Node*head,int x)
 }
 Node* swapPair(Node*head)
 {
-    
+    Node*curr1=head;
+    while(curr1!=nullptr&&curr1->next!=nullptr)
+    {
+        int temp=curr1->data;
+        curr1->data=curr1->next->data;
+        curr1->next->data=temp;
+        curr1=curr1->next->next;
+    }
     return head;
 }
 int main()
