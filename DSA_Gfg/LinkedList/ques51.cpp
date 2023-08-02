@@ -1,11 +1,11 @@
-// CONVERT BINARY LINKED LIST INTO INTEGER 
+// CHECK PALINDROME 
 #include<bits/stdc++.h>
 using namespace std;
 struct Node
 {
-    bool data;
+    char data;
     Node*next;
-    Node(bool x)
+    Node(char x)
     {
         data=x;
         next=nullptr;
@@ -20,7 +20,7 @@ void display(Node*head)
     }
     cout<<endl;
 }
-Node* InsertFun(Node*head,bool x)
+Node* InsertFun(Node*head,char x)
 {
     Node*temp=new Node(x);
     if(head==NULL)
@@ -36,16 +36,28 @@ Node* InsertFun(Node*head,bool x)
     curr->next=temp;
     return head;
 }
-int conversionB(Node*head)
+string checkPalindrome(Node*head)
 {
-    int res1,res2=0;
+    stack<char>s;
+    Node*curr=head;
+    while(curr!=nullptr)
+    {
+        s.push(curr->data);
+        curr=curr->next;
+    }
     while(head!=nullptr)
     {
-        res1+=(pow(2,res2))*(head->data);                // NEEND CORRECTION IN THE CODE TILL WRONG 
-        head=head->next;
-        res2++;
+        if((head->data)!=s.top())
+        {
+            return "No";
+        }
+        else
+        {
+            head=head->next;
+            s.pop();
+        }
     }
-    return res1;
+    return "Yes";
 }
 int main()
 {
@@ -56,12 +68,19 @@ int main()
     cout<<"Enter the linked list data :\n";
     for(int i=0;i<n;i++)
     {
-        bool x;
+        char x;
         cin>>x;
         head=InsertFun(head,x);
     }
     cout<<"Displaying the linked list data :\n";
     display(head);
-    cout<<"Binary conversion of your linked list into integer is : "<<conversionB(head);
+    if(checkPalindrome(head)=="Yes")
+    {
+        cout<<"Entered characters are palindrome :\n";
+    }
+    else
+    {
+        cout<<"Entered characters are not  palindrome :\n";
+    }
 return 0;
 }
