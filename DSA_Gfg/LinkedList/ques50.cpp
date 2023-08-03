@@ -38,14 +38,14 @@ Node* InsertFun(Node*head,bool x)
 }
 int conversionB(Node*head)
 {
-    int res1,res2=0;
-    while(head!=nullptr)
-    {
-        res1+=(pow(2,res2))*(head->data);                // NEEND CORRECTION IN THE CODE TILL WRONG 
-        head=head->next;
-        res2++;
-    }
-    return res1;
+    // int res1,res2=0;
+    // while(head!=nullptr)
+    // {
+    //     res1+=(pow(2,res2))*(head->data);                // NEEND CORRECTION IN THE CODE TILL WRONG 
+    //     head=head->next;
+    //     res2++;
+    // }
+    // return res1;
 }
 int main()
 {
