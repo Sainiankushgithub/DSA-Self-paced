@@ -36,9 +36,31 @@ Node* InsertFun(Node*head,char x)
     curr->next=temp;
     return head;
 }
-string checkPalindrome(Node*head)
+bool checkPalindrome(Node*head)
 {
-    
+    if(head==nullptr)
+    {
+        return 1;
+    }
+    Node*slow=head;
+    Node*fast=head;
+    while(fast!=nullptr&&fast->next!=nullptr)
+    {
+        slow=slow->next;
+        fast=fast->next->next;
+    }
+    Node*rev=reverselist(slow->data);
+    Node*curr=head;
+    while(rev!=nullptr)
+    {
+        if(rev->data!=curr->data)
+        {
+            return false;
+        }
+        rev=rev->next;
+        curr=curr->next;
+    }
+    return true;
 }
 int main()
 {
@@ -55,7 +77,7 @@ int main()
     }
     cout<<"Displaying the linked list data :\n";
     display(head);
-    if(checkPalindrome(head)=="Yes")
+    if(checkPalindrome(head)==1)
     {
         cout<<"Entered characters are palindrome :\n";
     }
