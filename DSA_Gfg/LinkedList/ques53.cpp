@@ -1,4 +1,4 @@
-// MERGE TWO SORTED LINKED list 
+// MERGE TWO SORTED LINKED list WITHOUT EXTRA AUXILARY SPACE
 #include<bits/stdc++.h>
 using namespace std;
 struct Node
@@ -38,7 +38,25 @@ Node*InsertFun(Node*head,int x)
 }
 Node*MergeTwolist(Node*head1,Node*head2)
 {
-   
+   if(head1==NULL)
+   {
+    return head2;
+   }
+   if(head2==NULL)
+   {
+    return head1;
+   }
+   Node*head=NULL,*tail=NULL;
+   if(head1->data<=head2->data)
+   {
+    head=tail=head1;
+    head1=head1->next;
+   }
+   else
+   {
+    head=tail=head2;
+    head2=head2->next;
+   }
 }
 int main()
 {

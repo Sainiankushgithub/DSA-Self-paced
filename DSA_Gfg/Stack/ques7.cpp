@@ -9,9 +9,26 @@ void display(int arr[],int n)
     }
     cout<<endl;
 }
-void stockSpan(int arr[],int n)
+void stockSpan(int arr[],int n,int k)
 {
     
+
+
+
+
+
+
+    //    LOGIC HERE
+    //  CURRENTLY NOT WORKING STILL THINKING OF IT !!!!!
+
+
+
+
+
+
+
+
+
 }
 int main()
 {
@@ -26,7 +43,8 @@ int main()
     }
     cout<<"Displaying your array :\n";
     display(arr,n);
+    int k;
     cout<<"Stock Span :\n";
-    stockSpan(arr,n);
+    stockSpan(arr,n,k);
 return 0;
 }
