@@ -17,17 +17,17 @@ void NearestGreater(int arr[],int n)
     {
         if(arr[i]<arr[i-1])
         {
-            cout<<arr[i-1]<<" ";               // WRONG 
-            continue;
+            cout<<arr[i-1]<<" ";               // WRONG     
+            continue;;
         }
         else
         {
             for(int j=i-1;j>=0;j--)
             {
-                if(arr[i]>arr[j])
+                if(arr[i]<arr[j])
                 {
                     cout<<arr[j]<<" ";
-                    continue;
+                    break;
                 }
             }
             cout<<c<<" ";
