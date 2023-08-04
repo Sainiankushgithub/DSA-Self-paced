@@ -19,7 +19,7 @@ void stockSpan(int arr[],int n,int k)
 
 
     //    LOGIC HERE
-    //  CURRENTLY NOT WORKING STILL THINKING OF IT !!!!!
+    //  CURRENTLY NOT WORKING STILL THINKING OF EFFICIENT SOLUTION !!!!!
 
 
 
