@@ -1,4 +1,4 @@
-// EFFICINET SOLUTION  MY SOLUTION 
+// NEXT NERAREST GREATOR ELEMENT NAIVE SOLUTION
 #include<bits/stdc++.h>
 using namespace std;
 void display(int arr[],int n)
@@ -9,26 +9,22 @@ void display(int arr[],int n)
     }
     cout<<endl;
 }
-void PrevNearestGreater(int arr[],int n)
+void NextNearestGreater(int arr[],int n)
 {
-    stack<int>s;
-    s.push(arr[0]);
-    cout<<-1<<" ";
-    for(int i=1;i<n;i++)
+    for(int i=0;i<n;i++)
     {
-        while(s.empty()==false&&s.top()<=arr[i])
+        int j;
+        for(j=i+1;j<n;j++)
         {
-            s.pop();
+            if(arr[i]<arr[j])
+            {
+                cout<<arr[j]<<" ";
+                break;
+            }
         }
-        if(s.empty()==true)
+        if(j==n)
         {
-            s.push(arr[i]);
             cout<<-1<<" ";
-        }
-        else
-        {
-            cout<<s.top()<<" ";
-            s.push(arr[i]);
         }
     }
 }
@@ -45,6 +41,6 @@ int main()
     }
     cout<<"Displaying your array elements :\n";
     display(arr,n);
-    PrevNearestGreater(arr,n);
+    NextNearestGreater(arr,n);
 return 0;
 }

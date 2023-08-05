@@ -9,7 +9,7 @@ void display(int arr[],int n)
     }
     cout<<endl;
 }
-void NearestGreater(int arr[],int n)
+void PrevNearestGreater(int arr[],int n)
 {
     for(int i=0;i<n;i++)
     {
@@ -41,6 +41,6 @@ int main()
     }
     cout<<"Displaying your array elements :\n";
     display(arr,n);
-    NearestGreater(arr,n);
+    PrevNearestGreater(arr,n);
 return 0;
 }
