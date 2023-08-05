@@ -11,26 +11,20 @@ void display(int arr[],int n)
 }
 void NearestGreater(int arr[],int n)
 {
-    int c=-1;
-    cout<<c<<" ";
-    for(int i=1;i<n;i++)
+    for(int i=0;i<n;i++)
     {
-        if(arr[i]<arr[i-1])
+        int j;
+        for(j=i-1;j>=0;j--)
         {
-            cout<<arr[i-1]<<" ";               // WRONG     
-            continue;;
-        }
-        else
-        {
-            for(int j=i-1;j>=0;j--)
+            if(arr[i]<arr[j])
             {
-                if(arr[i]<arr[j])
-                {
-                    cout<<arr[j]<<" ";
-                    break;
-                }
+                cout<<arr[j]<<" ";
+                break;
             }
-            cout<<c<<" ";
+        }
+        if(j==-1)
+        {
+            cout<<-1<<" ";
         }
     }
 }
