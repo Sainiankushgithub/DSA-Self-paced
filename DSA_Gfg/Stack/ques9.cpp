@@ -16,7 +16,7 @@ void NearestGreater(int arr[],int n)
     cout<<-1<<" ";
     for(int i=1;i<n;i++)
     {
-        while(s.empty()==false&&s.top()<arr[i])
+        while(s.empty()==false&&s.top()<=arr[i])
         {
             s.pop();
         }
