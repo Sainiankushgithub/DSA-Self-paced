@@ -12,16 +12,15 @@ void display(int arr[],int n)
 void NextNearestGreater(int arr[],int n)
 {
     stack<int>st;
-    for(int i = 0; i < n; i++) {
-        while(!st.empty() && arr[i] > st.top()) {
-            cout << arr[i] << " ";
+    for(int i=0;i<n;i++) {
+        while(!st.empty() && arr[i]>st.top()) {
+            cout<<arr[i]<< " ";
             st.pop();
         }
         st.push(arr[i]);
-    }
-    
-    while(!st.empty()) {
-        cout << -1 << " ";
+    }    
+    while(!st.empty()){
+        cout<< -1<< " ";
         st.pop();
     }
 }
