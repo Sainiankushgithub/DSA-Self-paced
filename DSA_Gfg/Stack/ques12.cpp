@@ -17,7 +17,7 @@ void NextNearestGreater(int arr[],int n)
             cout<<arr[i]<< " ";
             st.pop();
         }
-        st.push(arr[i]);
+        st.push(arr[i]);                               // FAIL IT SOME CASES : 
     }    
     while(!st.empty()){
         cout<< -1<< " ";
