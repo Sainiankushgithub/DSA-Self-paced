@@ -1,4 +1,4 @@
-// SIMPLE QUEUE PROGRAMM
+// SIMPLE QUEUE PROGRAMM IN C++ STL 
 #include<bits/stdc++.h>
 using namespace std;
 class Myqueue
