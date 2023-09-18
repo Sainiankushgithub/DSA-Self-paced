@@ -9,42 +9,52 @@ struct Node*head=NULL;
 struct Node*Create_List(int value)
 {
     struct Node*temp=(struct Node*)malloc(sizeof(struct Node));
+    if(temp==NULL)
+    {
+        printf("Memory Allocation failed exit \n");
+        exit(1);
+    }
+    temp->data=value;
     if(head==NULL)
     {
-        head=(struct Node*)malloc(sizeof(struct Node));
-        head->data=value;
+        head=temp;
         head->next=NULL;
-        temp=NULL;
     }
     else
     {
-        temp=head;
-        while(temp->next!=NULL)
+        struct Node*curr=head;
+        while(curr->next!=NULL)
         {
-            temp=temp->next;
+            curr=curr->next;
         }
-        temp->next=(struct Node*)malloc(sizeof(struct Node));
-        temp=temp->next;
-        temp->data=value;
-        temp->next=NULL;
+        curr->next=temp;
+        curr=curr->next;
+        curr->next=NULL;
     }
     return head;
 }
-struct Node*DelGivenNode()
+struct Node*DelGivenNode(int pos)
 {
-    if(head->next==NULL)
-    {
+     if(pos==1)
+     {
+        struct Node*temp=head->next;
         free(head);
-        return NULL;
-    }
-    struct Node*curr=head;
-    while(curr->next->next!=NULL)
-    {
+        return temp;
+     }
+     struct Node*curr=head;
+     for(int i=1;i<=pos-2&&curr!=NULL;i++)
+     {
         curr=curr->next;
-    }
-    free(curr->next);
-    curr->next=NULL;
-    return head;
+     }
+     if(curr==NULL)
+     {
+        printf("Invalid Index \n");
+        return head;
+     }
+     struct Node*temp=curr->next;
+     curr->next=curr->next->next;
+     free(temp);
+     return head;
 }
 void Traversal()
 {
@@ -70,8 +80,11 @@ int main()
     }
     printf("Displaying your linked list data :\n");
     Traversal();
+    int pos;
+    printf("Enter the position from where you want to delete :\n");
+    scanf("%d",&pos);
+    head=DelGivenNode(pos);
     printf("Displaying thelinked list after deleting the first Node :\n");
-    head=DelGivenNode();
     Traversal();
     return 0;
 }
