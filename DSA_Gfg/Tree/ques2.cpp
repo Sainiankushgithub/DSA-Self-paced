@@ -14,15 +14,15 @@ struct Node
     }
 };
 
-// PREORDER TRAVERSAL 
+// POST ORDER  TRAVERSAL 
 
-void PreorderTraversal(struct Node*root)
+void PostorderTraversal(struct Node*root)
 {
     if(root!=NULL)
     {
+    PostorderTraversal(root->left);
+    PostorderTraversal(root->right);
     cout<<root->data<<"\t";
-    PreorderTraversal(root->left);
-    PreorderTraversal(root->right);
     }
 }
 int main()
@@ -36,6 +36,6 @@ int main()
     root->right=new Node(30);
     root->right->right=new Node(60);
     cout<<"Pre order traversal :\n";
-    PreorderTraversal(root);
+    PostorderTraversal(root);
 return 0;
 }
