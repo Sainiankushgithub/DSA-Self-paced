@@ -1,4 +1,3 @@
-// INORDER TRAVERSAL 
 #include<stdio.h>
 #include<stdlib.h>
 struct Node
@@ -7,14 +6,14 @@ struct Node
     struct Node*left;
     struct Node*right;
 };
-struct Node*CreateList(int val)
+struct Node* createList(int val)
 {
     struct Node*temp=(struct Node*)malloc(sizeof(struct Node));
     temp->data=val;
     temp->left=NULL;
     temp->right=NULL;
-    return temp;
 }
+
 void Traversal(struct Node*root)
 {
     if(root!=NULL)
@@ -26,11 +25,14 @@ void Traversal(struct Node*root)
 }
 int main()
 {
-    struct Node*root=CreateList(1);
-    struct Node*p1=CreateList(2);
-    struct Node*p2=CreateList(3);
-    root->left=p1;
-    root->right=p2;
+    struct Node*root=createList(10);
+    root->left=createList(20);
+    root->right=createList(30);
+    root->left->left=createList(40);
+    root->left->left->left=createList(50);
+    root->left->left->left->left=createList(60);
+    root->left->right=createList(45);
+    root->left->left->right=createList(75);
     Traversal(root);
     return 0;
 }
