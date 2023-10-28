@@ -1,7 +1,6 @@
 
 
-//   ALL TRAVERSAL IN JUST ONE CODE  
-
+//   ALL TRAVERSAL IN JUST ONE CODE
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -41,14 +40,14 @@ void InTraversal(struct Node *root)
     }
 }
 
-// THIS IS POSTORDER TRAVERSAL 
-void PosTraversal(struct Node*root)
+// THIS IS POSTORDER TRAVERSAL
+void PosTraversal(struct Node *root)
 {
-    if(root!=NULL)
+    if (root != NULL)
     {
         PosTraversal(root->left);
         PosTraversal(root->right);
-        printf("%d\t",root->data);
+        printf("%d\t", root->data);
     }
 }
 int main()
