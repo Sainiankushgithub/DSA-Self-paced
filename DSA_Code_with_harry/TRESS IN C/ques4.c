@@ -32,7 +32,7 @@ int maxsize(struct Node *root)
     }
     else
     {
-        return max(root->data , max(maxsize(root->left),maxsize(root->rigt)));
+        return max(root->data , max(maxsize(root->left),maxsize(root->rigt)));   // NOT CORRECT LOGIC 
     }
 }
 int main()
