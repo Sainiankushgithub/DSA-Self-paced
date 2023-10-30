@@ -16,23 +16,15 @@ struct Node *createNode(int val)
     temp->rigt = NULL;
     return temp;
 }
-int maxsize(struct Node *root)
+int maxSize(struct Node *root)
 {
     if (root==NULL)
     {
-        return 0;
-    }
-    else if(root->left==NULL&&root->rigt==NULL)
-    {
-        return root->data;
-    }
-    else if(root->left==NULL||root->rigt==NULL)
-    {
-        return root->data;
+        return INT_MIN;
     }
     else
     {
-        return max(root->data , max(maxsize(root->left),maxsize(root->rigt)));   // NOT CORRECT LOGIC 
+        return fmax(root->data,fmax(maxSize(root->left),maxSize(root->rigt)));
     }
 }
 int main()
@@ -60,6 +52,8 @@ int main()
     // TEST CASE 3
     root->left=createNode(4);
     root->left->rigt=createNode(5);
-    printf("Maximum Binary is : %d ", maxsize(root));
+    root->rigt=createNode(40);
+    root->rigt->rigt=createNode(80);
+    printf("Maximum Binary is : %d ", maxSize(root));
     return 0;
 }
