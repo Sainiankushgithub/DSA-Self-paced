@@ -1,4 +1,4 @@
-// HEIGHT OF A BINARY TREE 
+// PRINT K NODES OF A BINARY TREE 
 #include<bits/stdc++.h>
 using namespace std;
 struct Node
@@ -24,8 +24,9 @@ void printkNode(Node*root,int k)
         cout<<root->data<<" ";
     }
     else
-    {                                    // NO DONE YET !!!
-        
+    { 
+        printkNode(root->left,k-1);
+        printkNode(root->right,k-1);  
     }
 }
 int main()
@@ -34,13 +35,14 @@ int main()
     root->left=new Node(20);
     root->right=new Node(30);
     root->left->left=new Node(8);
-    // root->left->right=new Node(7);
-    // root->left->right->left=new Node(9);
-    // root->left->right->right=new Node(15);
-    // root->right->right=new Node(6);
+    root->left->right=new Node(7);
+    root->left->right->left=new Node(9);
+    root->left->right->right=new Node(15);
+    root->right->right=new Node(6);
     int k;
     cout<<"Enter the kth node number to print all the kth element :\n";
     cin>>k;
+    cout<<"Printing the k node element :\n";
    printkNode(root,k);
 return 0;
 }

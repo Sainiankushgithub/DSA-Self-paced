@@ -21,9 +21,9 @@ int MaxBinaryTree(Node*root)
     }
     else
     {
-        int leftroot=MaxBinaryTree(root->left);
-        int rightroot=MaxBinaryTree(root->right);
-        return max(root->data,max(leftroot,rightroot));
+        // int leftroot=MaxBinaryTree(root->left);
+        // int rightroot=MaxBinaryTree(root->right);
+        return max(root->data,max(MaxBinaryTree(root->left),MaxBinaryTree(root->right)));
     }
 }
 int main()
