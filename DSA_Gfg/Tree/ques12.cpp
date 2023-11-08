@@ -1,4 +1,4 @@
-// LEVEL ORDER TRAVERSAL BY GFG (METHOD 1 ) LINE BY LINE TRAVERSAL
+// LEVEL ORDER TRAVERSAL BY GFG (METHOD 2 ) LINE BY LINE TRAVERSAL
 #include<bits/stdc++.h>
 using namespace std;
 struct Node
@@ -13,6 +13,7 @@ struct Node
         right=NULL;
     }
 };
+
 void LevelorderTraversal(Node*root)
 {
     if(root==NULL)
