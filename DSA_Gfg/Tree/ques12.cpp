@@ -1,4 +1,4 @@
-// LEVEL ORDER TRAVERSAL BY GFG (METHOD 2 ) LINE BY LINE TRAVERSAL
+// LEVEL ORDER TRAVERSAL BY GFG (METHOD 2 ) LINE BY LINE ITERATIVE SOLUTION 
 #include<bits/stdc++.h>
 using namespace std;
 struct Node
@@ -22,26 +22,24 @@ void LevelorderTraversal(Node*root)
     }
     queue<Node*>q;
     q.push(root);
-    q.push(NULL);
-    while(q.size()>1)
+    while(q.empty()==false)
     {
-        Node*curr=q.front();
-        q.pop();
-        if(curr==NULL)
+        int count=q.size();
+        for(int i=0;i<count;i++)
         {
-            cout<<"\n";
-            q.push(NULL);
-            continue;
+            Node*curr=q.front();
+            q.pop();
+            cout<<curr->data<<" ";
+            if(curr->left!=NULL)
+            {
+                q.push(curr->left);
+            }
+            if(curr->right!=NULL)
+            {
+                q.push(curr->right);
+            }
         }
-        cout<<curr->data<<" ";
-        if(curr->left!=NULL)
-        {
-            q.push(curr->left);
-        }
-        if(curr->right!=NULL)
-        {
-            q.push(curr->right);
-        }
+        cout<<"\n";
     }
 }
 int main()
