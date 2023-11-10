@@ -20,24 +20,38 @@ void preorderTraversal(struct Node *root)
 {
     struct Node*st[MAX];
     int top=-1;
-   jump:while(root!=NULL)
+    jump:while(root!=NULL)
     {
-        printf("%d ",root->data);
+        if(root->right!=NULL)
+        {
+            top++;
+            st[top]=root->right;
+        }
         top++;
         st[top]=root;
         root=root->left;
     }
-        if(root==NULL&&top==-1)
-        {
-            return;
-        }
-        else
-        {
-            root=st[top];
-            top--;
-            root=root->right;
-            goto jump;
-        }
+    if(root==NULL&&top==-1)
+    {
+        return;
+    }
+    else
+    {
+        root=st[top];
+        top--;
+    }
+    if(root->right!=NULL&&st[top]==root->right)
+    {
+        st[top]=root;
+        root=root->right;
+        goto jump;
+    }
+    else
+    {
+        printf("%d ",root->data);
+        root=NULL;
+        goto jump;
+    }
 }
 int main()
 {
