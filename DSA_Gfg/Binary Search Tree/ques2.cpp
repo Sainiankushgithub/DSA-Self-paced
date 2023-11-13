@@ -1,4 +1,4 @@
-// RECURSIVE SEARCH IN BINARY SEARCH TREE 
+// ITERATIVE SEARCH IN BINARY SEARCH TREE 
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -15,22 +15,22 @@ struct Node
 };
 bool search(Node*root,int x)
 {
-    if(root==NULL)
+    while(root!=NULL)
     {
-        return false;
+        if(root->key==x)
+        {
+            return true;
+        }
+        else if(root->key>x)
+        {
+            root=root->left;
+        }
+        else
+        {
+            root=root->right;
+        }
     }
-    else if(root->key==x)
-    {
-        return true;
-    }
-    else if (root->key>x)
-    {
-        return search(root->left,x);
-    }
-    else
-    {
-        return search(root->right,x);
-    }
+    return false;
 }
 int main()
 {
