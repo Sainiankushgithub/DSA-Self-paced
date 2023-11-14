@@ -24,6 +24,27 @@ void LevelOrederTraversal(Node*root)
     {
         return;
     }
+    queue<Node*>q;
+    q.push(root);
+    while(q.empty()==false)
+    {
+        int count=q.size();
+        for(int i=0;i<count;i++)
+        {
+            Node*curr=q.front();
+            q.pop();
+            cout<<curr->data<<" ";
+            if(curr->left!=NULL)
+            {
+                q.push(curr->left);
+            }
+            if(curr->right!=NULL)
+            {
+                q.push(curr->right);
+            }
+        }
+        cout<<"\n";
+    }
 }
 int main()
 {
@@ -36,6 +57,7 @@ int main()
     root->right=new Node(40);
     root->right->left=new Node(30);
     root->right->right=new Node(50);
+    LevelOrederTraversal(root);
 
 return 0;
 }
