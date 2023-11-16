@@ -47,7 +47,7 @@ void preorderTraversal(struct Node *root)
         goto jump;
     }
     else
-    {
+    { 
         printf("%d ",root->data);
         root=NULL;
         goto jump;
