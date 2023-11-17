@@ -7,7 +7,8 @@ struct Student
     char name[20];
     char section[10];
 };
-struct Student s1,s2;
+typedef struct Student s;
+s s1,s2;
 void clearInputBuffer()
 {
     int c;
