@@ -1,4 +1,4 @@
-// CEIL OF A BINARY SERCH TREE 
+// SELF BALANCING BINARY TREE
 #include<bits/stdc++.h>
 using namespace std;
 struct Node
@@ -27,27 +27,6 @@ Node*InsertNode(Node*root,int x)
     }
     return root;
 }
-Node*NearestMax(Node*root,int ele)
-{
-    Node*res=NULL;
-    while(root!=NULL)
-    {
-        if(root->data==ele)
-        {
-            return root;
-        }
-        else if(root->data>ele)
-        {
-            res=root;
-            root=root->left;
-        }
-        else
-        {
-            root=root->right;
-        }
-    }
-    return res;
-}
 int main()
 {
     Node*root=NULL;
@@ -61,10 +40,7 @@ int main()
         cin>>x;
         root=InsertNode(root,x);
     }
-    int ele;
-    cout<<"Enter the Element to find the nearest Maximum of the Binary tree \n";
-    cin>>ele;
-    Node*curr=NearestMax(root,ele);
-    cout<<"Nearest Minimum is : "<<curr->data;
+    // written there left !
+    
 return 0;
 }
