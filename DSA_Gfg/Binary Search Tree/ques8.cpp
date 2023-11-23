@@ -1,4 +1,4 @@
-// SELF BALANCING BINARY TREE
+// DELETION IN BINARY SEARCH TREE 
 #include<bits/stdc++.h>
 using namespace std;
 struct Node
