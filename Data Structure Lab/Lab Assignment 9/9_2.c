@@ -7,6 +7,7 @@ v. count number of leaf nodes  */
 #include<stdlib.h>
 #include<stdio.h>
 #include<stdbool.h>
+#include<math.h>
 struct Node
 {
     int data;
@@ -40,13 +41,58 @@ int Largest(struct Node*root)
 {
     if(root==NULL)
     {
-        return 0;
+        return -1;
     }
     while(root->right!=NULL)
     {
         root=root->right;
     }
     return root->data;
+}
+int Smallest(struct Node*root)
+{
+    if(root==NULL)
+    {
+        return -1;
+    }
+    while(root->left!=NULL)
+    {
+        root=root->left;
+    }
+    return root->data;
+}
+int Height(struct Node*root)
+{
+    if(root==NULL)
+    {
+        return 0;
+    }
+    return fmax(Height(root->left),Height(root->right))+1;
+}
+int CountLeaf(struct Node*root)
+{
+     if(root==NULL)
+    {
+        return 0;
+    }
+    else if(root->left==NULL&&root->right==NULL)
+    {
+        return 1;
+    }
+    else
+    {
+        return CountLeaf(root->left)+CountLeaf(root->right);
+    }
+}
+void Traversal(struct Node*root)
+{
+    if(root==NULL)
+    {
+        return;
+    }
+    Traversal(root->left);
+    printf("%d ",root->data);
+    Traversal(root->right);
 }
 int main()
 {
@@ -77,10 +123,33 @@ int main()
             }
             case 2:
             {
-                
+                printf("Largest Element is : %d \n",Largest(root));
+                break;
+            }
+            case 3:
+            {
+                printf("Smallest Element is : %d \n",Smallest(root));
+                break;
+            }
+            case 4:
+            {
+                printf("Height of the binary tree : %d \n",Height(root));
+                break;
+            }
+            case 5:
+            {
+                printf("Total number of leaf Nodes : %d \n",CountLeaf(root));
+                break;
+            }
+            case 6:
+            {
+                printf("Displaying your Tree in Sorted Order \n");
+                Traversal(root);
+                printf("\n");
+                break;
             }
         }
-    } while (choice!=6);
+    } while (choice!=7);
     
     return 0;
 }
