@@ -39,12 +39,19 @@ void inorderTraversal(struct Node*root)
         inorderTraversal(root->right);
         }
 }
+struct Node*getSuccessor(struct Node*curr)
+{
+    curr=curr->right;
+    while(curr!=NULL&&curr->left!=NULL)
+    {
+        curr=curr->left;
+    }
+    return curr;
+}
 struct Node*DelNode(struct Node*root,int x)
 {
     if(root==NULL)
-    {
         return;
-    }
     if(root->data>x)
     {
         root->left=DelNode(root->left,x);
@@ -55,10 +62,25 @@ struct Node*DelNode(struct Node*root,int x)
     }
     else
     {
-        if(root->left!=NULL)
+        if(root->left==NULL)
         {
-            
+            struct Node*temp=root->right;
+            free(root);
+            return temp;
         }
+        else if(root->right==NULL)
+        {
+            struct Node*temp=root->left;
+            free(root);
+            return temp;
+        }
+        else
+        {
+            struct Node*succ=getSuccessor(root);
+            root->data=succ->data;
+            root->right=DelNode(root->right,succ->data);
+        }
+        return root;
     }
 }
 int main()
@@ -80,5 +102,8 @@ int main()
     printf("Enter the element you want to delete \n");
     int ele;
     scanf("%d",&ele);
+    root=DelNode(root,ele);
+    printf("Displaying after Deletion \n");
+    inorderTraversal(root);
     return 0;
 }
