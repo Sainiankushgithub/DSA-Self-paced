@@ -11,6 +11,7 @@ void display(set<int,greater<int>>&s)
 }
 int main()
 {
+
  /* set<int>s;
     s.insert(10);
     s.insert(20);
@@ -23,6 +24,7 @@ int main()
     {
         cout<<x<<" ";
     }   */
+
     set<int,greater<int>>s; // Using this All element will store in decsending order
     int node;
     cout<<"Enter the numbers of nodes you want to enter \n";
@@ -36,5 +38,39 @@ int main()
     }
     cout<<"Displaying your data \n";
     display(s);
+    int ele;
+    cout<<"Enter the element to be search \n";
+    cin>>ele;
+
+    // if(s.find(ele)!=s.end())
+    // {
+    //     cout<<"Element found \n";
+    // }
+    // else
+    // {
+    //     cout<<"Element not found \n";
+    // }
+
+    // ANOTHER WAY OF FINDING THE ELEMENT 
+
+    auto it=s.find(ele);
+    while(it!=s.end())
+    {
+        cout<<(*it)<<" ";
+        it++;
+    }
+    cout<<endl;
+
+    cout<<"Maximum Size of the set is : "<<s.max_size()<<endl;
+    if(s.empty())
+    {
+        cout<<"Set is empty ()\n";
+    }
+    else
+    {
+        cout<<"Set is not empty()\n";
+    }
+
+    
 return 0;
 }
