@@ -1,46 +1,40 @@
 // SET IN C++ 
 #include<bits/stdc++.h>
 using namespace std;
-struct Node
+void display(set<int,greater<int>>&s)
 {
-    int data;
-    Node*left,*right;
-    Node(int x)
+    for(auto it=s.begin();it!=s.end();it++)
     {
-        data=x;
-        left=right=NULL;
+        cout<<(*it)<<" ";
     }
-};
-Node*InsertNode(Node*root,int x)
-{
-    if(root==NULL)
-    {
-        return new Node(x);
-    }
-    else if(root->data>x)
-    {
-        root->left=InsertNode(root->left,x);
-    }
-    else
-    {
-        root->right=InsertNode(root->right,x);
-    }
-    return root;
+    cout<<endl;
 }
 int main()
 {
-    Node*root=NULL;
-    int height;
-    cout<<"Enter the height of the binary tree \n";
-    cin>>height;
-    cout<<"Enter the Binary search data according to your height \n";
-    for(int i=0;i<height;i++)
+ /* set<int>s;
+    s.insert(10);
+    s.insert(20);
+    s.insert(40);
+    s.insert(5);
+    s.insert(9);
+    s.insert(4);
+    s.insert(15);
+    for(auto x:s)
+    {
+        cout<<x<<" ";
+    }   */
+    set<int,greater<int>>s; // Using this All element will store in decsending order
+    int node;
+    cout<<"Enter the numbers of nodes you want to enter \n";
+    cin>>node;
+    cout<<"Enter the data to each node\n";
+    for(int i=0;i<node;i++)
     {
         int x;
         cin>>x;
-        root=InsertNode(root,x);
+        s.insert(x);
     }
-    // written there left !
-    
+    cout<<"Displaying your data \n";
+    display(s);
 return 0;
 }
