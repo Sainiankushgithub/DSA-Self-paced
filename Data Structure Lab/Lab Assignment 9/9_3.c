@@ -94,7 +94,7 @@ int main()
     {
         int x;
         scanf("%d",&x);
-        root=Create_BST(root,x);
+        root=Insert_BST(root,x);
     }
     printf("Inorder Traversal \n");
     inorderTraversal(root);
