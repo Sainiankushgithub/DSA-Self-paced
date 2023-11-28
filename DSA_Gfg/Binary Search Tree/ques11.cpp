@@ -22,5 +22,12 @@ int main()
     {
         cout<<(*iter).first<<" "<<(*iter).second<<"\n";
     }
+    m.insert({1,45});
+    m.insert({2,20});
+    cout<<"Displaying after some operation \n";
+    for(iter=m.begin();iter!=m.end();iter++)
+    {
+        cout<<(*iter).first<<" "<<(*iter).second<<"\n";
+    }
 return 0;
 }
