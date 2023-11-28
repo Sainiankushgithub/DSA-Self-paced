@@ -30,7 +30,7 @@ Node *InsertNode(Node *root, int x)
 }
 void DelKthEle(struct Node*root,int k)
 {
-
+    // Logic will be written there soon!
 }
 void Traversal(Node *root)
 {
