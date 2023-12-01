@@ -1,4 +1,4 @@
-// CHECK FOR THE BST 
+// CHECK FOR THE BST USING THE INORDER TRAVERSAL 
 #include<bits/stdc++.h>
 using namespace std;
 int count=0;

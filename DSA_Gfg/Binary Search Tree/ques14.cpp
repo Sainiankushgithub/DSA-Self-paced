@@ -1,4 +1,4 @@
-// CHECK FOR THE BST 
+// CHECK FOR THE BST METHOD 1 IS TO GET THE PREDECESOR AND SUCCESSOR
 #include<bits/stdc++.h>
 using namespace std;
 int count=0;
