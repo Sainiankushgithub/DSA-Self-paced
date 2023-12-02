@@ -1,6 +1,6 @@
-// IMPLEMENTATION OF QUEUE 
-#include<bits/stdc++.h>
-using namespace std;
+// IMPLEMENTATION OF QUEUE IN C LANGUAGE  
+#include<stdio.h>
+#include<stdlib.h>
 struct Queue
 {
     int front;
