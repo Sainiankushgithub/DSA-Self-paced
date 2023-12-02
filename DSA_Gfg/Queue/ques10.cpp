@@ -1,18 +1,21 @@
-// IMPLEMENTATION OF QUEUE USING LINEKD LIST IN C
-#include<stdio.h>
-#include<stdlib.h>
+// IMPLEMENTATION OF QUEUE USING LINEKD LIST IN C++
+#include<bits/stdc++.h>
+using namespace std;
 struct Node
 {
     int data;
     struct Node*next;
+    Node(int x)
+    {
+        data=x;
+        next=NULL;
+    }
 };
 struct Node*front=NULL;
 struct Node*rear=NULL;
 void Enqueue(int x)
 {
-    struct Node*temp=(struct Node*)malloc(sizeof(struct Node));
-    temp->data=x;
-    temp->next=NULL;
+    Node*temp=new Node(x);
     if(front==NULL&&rear==NULL)
     {
         front=rear=temp;
@@ -25,51 +28,51 @@ void Enqueue(int x)
 }
 void Dequeue()
 {
-    if(front==NULL&&rear==NULL)
+    if(front==NULL)
     {
-        printf("Queue is empty()\n");
+        cout<<"Queue is empty()"<<endl;
         return;
     }
     else
     {
-        printf("Dequeued Node : %d \n",front->data);
-        struct Node*temp=front;
+        cout<<"Dequeued Node "<<front->data<<endl;
+        Node*temp=front;
         front=front->next;
-        free(temp);
+        delete temp;
     }
 }
 void display()
 {
     if(rear==NULL&&rear==NULL)
     {
-        printf("Queue is empty()\n");
+        cout<<"Queue is empty()"<<endl;
         return;
     }
     else
     {
-        struct Node*temp=front;
+        Node*temp=front;
         while(temp!=NULL)
         {
-            printf("%d->",temp->data);
+            cout<<temp->data<<"->";
             temp=temp->next;
         }
-        printf("NULL\n");
+        cout<<"NULL\n";
     }
 }
 int main()
 {
-    printf("1.Enqueue()\n2.Dequeue()\n3.Display()\n4.exit()\n");
+    cout<<"1.Enqueue()\n2.Dequeue()\n3.Display()\n4.exit()\n";
     int choice;
     do
     {
-        printf("Enter the choice :\n");
-        scanf("%d",&choice);
+        cout<<"Enter the choice :\n";
+        cin>>choice;
         switch(choice)
         {
             case 1:
             {
                 int x;
-                printf("Enter the Element to be enqueued\n");
+                cout<<"Enter the Element to be enqueued\n";
                 scanf("%d",&x);
                 Enqueue(x);
                 break;
@@ -86,13 +89,13 @@ int main()
             }
             case 4:
             {
-                printf("Exited\n");
+                cout<<"Exited\n";
                 exit(1);
                 break;
             }
             default:
             {
-                printf("Invalid entry\n");
+                cout<<"Invalid entry\n";
                 break;
             }
         }
