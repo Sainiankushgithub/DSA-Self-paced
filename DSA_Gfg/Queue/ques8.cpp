@@ -64,7 +64,7 @@ int main()
     q.front=-1;
     q.rear=-1;
     q.capacity=6;
-    q.que=new int[q.capacity];
+    q.que=(int*)malloc(q.capacity*sizeof(int));
     printf("1.ENQUEUE()\n2.DEQUEUE()\n3.Display()\n4.PEEK()\n");
     int choice;
     do
