@@ -1,4 +1,4 @@
-// INPUT RESTRICTED DEQue 
+// GRAPH IMPLEMENTATION USING ADJANCEY MATRIX
 #include<bits/stdc++.h>
 using namespace std;
 int main()
