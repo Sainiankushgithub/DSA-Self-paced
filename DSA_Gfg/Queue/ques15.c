@@ -95,13 +95,36 @@ void DequeueRear()
         q.rear--;
     }
 }
+void Display()
+{
+    if (q.Front == -1 && q.rear == -1)
+    {
+        printf("Queue is empty\n");
+    }
+    else
+    {
+        int i = q.Front;
+        while (i != (q.rear + 1) % q.capacity)
+        {
+            printf("%d ", q.DEQue[i]);
+            i = (i + 1) % q.capacity;
+        }
+        printf("\n");
+    }
+}
+
 int main()
 {
     q.Front=-1;
     q.rear=-1;
     q.capacity=5;
     q.DEQue=(int*)malloc(q.capacity*sizeof(int));
-    printf("1.EnqueueFront()\n2.EnqueueRear()\n4.DequeueFront()\n5.DequeueRear()\n6.Display()\n7.Exit()\n");
+    if(q.DEQue==NULL)
+    {
+        printf("Memory Allocation Failed \n");
+        exit(1);
+    }
+    printf("1.EnqueueFront()\n2.EnqueueRear()\n3.DequeueFront()\n4.DequeueRear()\n5.Display()\n6.Exit()\n");
     int choice;
     do
     {
@@ -119,16 +142,29 @@ int main()
             }
             case 2:
             {
-                Dequeue();
+                int x;
+                printf("Enter the element to be inserted \n");
+                scanf("%d",&x);
+                EnqueueRear(x);
                 break;
             }
             case 3:
+            {
+                DequeueFront();
+                break;
+            }
+            case 4:
+            {
+                DequeueRear();
+                break;
+            }
+            case 5:
             {
                 printf("Displaying the Circular Queue Element \n");
                 Display();
                 break;
             }
-            case 4:
+            case 6:
             {
                 exit(1);
             }
@@ -138,6 +174,6 @@ int main()
                 break;
             }
         }
-    } while (choice!=4);
+    } while (choice!=6);
     return 0;
 }
