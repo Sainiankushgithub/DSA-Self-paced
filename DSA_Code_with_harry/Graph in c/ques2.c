@@ -1,3 +1,4 @@
+// ADJANCENCY  IN LIST DIRECTED GRAPH
 #include<stdio.h>
 #include<stdlib.h>
 struct Node
