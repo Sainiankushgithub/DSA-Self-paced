@@ -3,6 +3,13 @@
 using namespace std;
 int main()
 {
-    cout<<"Graph questions "<<endl;
+    int vertices;
+    cout<<"Enter the vertices \n";
+    cin>>vertices;
+    int graph[vertices][vertices];
+    for(int i=0;i<vertices;i++)
+    {
+        
+    }
 return 0;
 }
