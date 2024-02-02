@@ -9,7 +9,10 @@ int main()
     int graph[vertices][vertices];
     for(int i=0;i<vertices;i++)
     {
-        
+        for(int j=0;j<vertices;j++)
+        {
+            
+        }
     }
 return 0;
 }
