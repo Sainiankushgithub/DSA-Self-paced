@@ -22,11 +22,17 @@ void inorderTraversal(struct TreeNode*root)
         inorderTraversal(root->right);
     }
 }
+int height(struct TreeNode*root)
+{
+    
+}
 int main()
 {
     struct TreeNode*root=new TreeNode(10);
     root->left=new TreeNode(20);
     root->right= new TreeNode(30);
     inorderTraversal(root);
+
+
 return 0;
 }
