@@ -3,7 +3,7 @@
 using namespace std;
 int IterativeBinary(int arr[],int low,int high,int ele)
 {
-    while(low<high)
+    while(low<=high)
     {
         int mid=(low+high)/2;
         if(arr[mid]==ele)
@@ -25,10 +25,8 @@ int IterativeBinary(int arr[],int low,int high,int ele)
 int RecursiveBinary(int arr[],int low,int high,int ele)
 {
     int mid=(low+high)/2;
-    if(low<high)
+    if(low<=high)
     {
-        return -1;
-    }
     if(arr[mid]==ele)
     {
         return mid;
@@ -41,6 +39,8 @@ int RecursiveBinary(int arr[],int low,int high,int ele)
     {
         return RecursiveBinary(arr,mid+1,high,ele);
     }
+    }
+    return -1;
 }
 int main()
 {
@@ -48,12 +48,12 @@ int main()
     int size=sizeof(arr)/sizeof(int);
 
     // ITERATIVE APPROACH FOR THE BINARY SEARCH 
-    int index=IterativeBinary(arr,0,size,7);
+    int index=IterativeBinary(arr,0,size-1,43);
     cout<<"Iterative : Element at index "<<index<<"\n";
 
     // RECURSIVE APPROACH FOR THE BINARY SEARCH 
 
-    int index2=RecursiveBinary(arr,0,size,5);
+    int index2=RecursiveBinary(arr,0,size-1,43);
     cout<<"Recursive : Element at Index "<<index2<<"\n";
 return 0;
 }
