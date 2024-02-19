@@ -11,5 +11,6 @@ int main()
     int size=sizeof(arr)/sizeof(int);
     
     int index=SearchIndex(arr,size);
+    cout<<"Insert Index is "<<index<<"\n";
 return 0;
 }
