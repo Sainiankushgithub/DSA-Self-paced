@@ -5,33 +5,97 @@ DSA 150 DAYS CHALLENGE 450 QUESTIONS
 
 
 
-DAY 16 :
+•	DAY 16 :
 1.SQRT(X)
 class Solution {
 public:
-    int mySqrt(int x) {
-        long long l=0,h=x;
-        int result;
-        while(l<=h)
-        {
-            long long mid=(l+h)/2;
-            if(mid*mid==x)
-            {
-                return mid;
-            }
-            else if(mid*mid<x)
-            {
-                l=mid+1;
-            }
-            else
-            {
-                h=mid-1;
-            }
-            if(mid*mid<x)
-            {
-                result=mid;
-            }
-        }
-        return result;
-    }
+    int mySqrt(int x) {
+        long long l=0,h=x;
+        int result;
+        while(l<=h)
+        {
+            long long mid=(l+h)/2;
+            if(mid*mid==x)
+            {
+                return mid;
+            }
+            else if(mid*mid<x)
+            {
+                l=mid+1;
+            }
+            else
+            {
+                h=mid-1;
+            }
+            if(mid*mid<x)
+            {
+                result=mid;
+            }
+        }
+        return result;
+    }
 };
+
+
+2.PLUS ONE
+NAÏVE SOLUTION:
+Example 1:
+Input: digits = [1,2,3]
+Output: [1,2,4]
+Explanation: The array represents the integer 123.
+Incrementing by one gives 123 + 1 = 124.
+Thus, the result should be [1,2,4].
+Example 2:
+Input: digits = [4,3,2,1]
+Output: [4,3,2,2]
+Explanation: The array represents the integer 4321.
+Incrementing by one gives 4321 + 1 = 4322.
+Thus, the result should be [4,3,2,2].
+Example 3:
+Input: digits = [9]
+Output: [1,0]
+Explanation: The array represents the integer 9.
+Incrementing by one gives 9 + 1 = 10.
+Thus, the result should be [1,0].
+
+
+class Solution {
+public:
+    vector<int> plusOne(vector<int>& digits) {
+        vector<int>v;
+        int i=digits.size()-1;
+        int carry=1;
+        while(i>=0)
+        {
+            v.push_back((digits[i]+carry)%10);
+            carry=(digits[i]+carry)/10;
+            i--;
+        }
+        if(carry==1)
+        {
+            v.push_back(1);
+        }
+        return vector<int>(v.rbegin(),v.rend());
+    }
+};
+EFFICIENT SOLUTION :
+class Solution {
+public:
+    vector<int> plusOne(vector<int>& digits) {
+       int i=digits.size()-1;
+       while(i>=0)
+       {
+           if(digits[i]<9)
+           {
+               digits[i]++;
+               return digits;
+           }
+           digits[i]=0;
+           i--;
+       }
+       digits.insert(digits.begin(),1);
+       return digits;
+    }
+};
+
+
