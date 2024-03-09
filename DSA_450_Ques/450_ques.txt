@@ -263,5 +263,29 @@ public:
     }
 };
 
+5.Excel Sheet Column Number
+Example 1:
+Input: columnTitle = "A"
+Output: 1
+Example 2:
+Input: columnTitle = "AB"
+Output: 28
+Example 3:
+Input: columnTitle = "ZY"
+Output: 701
+
+class Solution {
+public:
+    int titleToNumber(string s) {
+        int res=0;
+        for(int i=0;i<s.size();i++)
+        {
+            int value=s[i]-'A'+1;
+            res=res*26+value;
+        }return res;
+    }
+};
+
+
 
 
