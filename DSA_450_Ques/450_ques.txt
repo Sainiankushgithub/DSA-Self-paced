@@ -286,6 +286,91 @@ public:
     }
 };
 
+•	DAY 18 :
+1.Add Binary
+Example 1:
+Input: a = "11", b = "1"
+Output: "100"
+class Solution {
+public:
+    string addBinary(string a, string b) {
+        string sum="";
+       int i=a.size()-1,j=b.size()-1;
+       int carry=0;
+       int digit_sum=0;
+       while(i>=0 || j>=0 || carry)
+       {
+           digit_sum=carry;
+           if(i>=0)
+           {
+               digit_sum+=a[i--]-'0';
+           }
+           if(j>=0)
+           {
+               digit_sum+=b[j--]-'0';
+           }
+           sum=to_string(digit_sum%2)+sum;
+           carry=digit_sum/2;
+       }
+       return sum;
+    }
+};
 
+2.Counting Bits
+Input: n = 2
+Output: [0,1,1]
+Explanation:
+0 --> 0
+1 --> 1
+2 --> 10
+Example 2:
+Input: n = 5
+Output: [0,1,1,2,1,2]
+Explanation:
+0 --> 0
+1 --> 1
+2 --> 10
+3 --> 11
+4 --> 100
+5 --> 101
 
+NAÏVE APPROACH :
+class Solution {
+public:
+    vector<int> countBits(int n) {
+        // vector<int>v(n+1,0);
+        // for(int i=1;i<=n;i++)
+        // {
+        //     int num=i;
+        //     while(num>1)
+        //     {
+        //         if(num%2==1)
+        //         v[i]++;
+        //         num=num/2;
+        //     }
+        //     ++v[i];
+        // }
+        // return v;
+    }
+};
+EFFICIENT APPROACH: O(n)
+class Solution {
+public:
+    vector<int> countBits(int n) {
+         vector<int>v(n+1);
+        v[0]=0;
+        for(int i=0;i<=n;i++)
+        {
+            if(i%2!=0)
+            {
+                v[i]=v[i/2]+1;
+            }
+            else
+            {
+                v[i]=v[i/2];
+            }
+        }
+        return v;
+    }
+};
 
