@@ -459,7 +459,43 @@ public:
     }
 };
 
-Method 2:
+Method 2: Bitwise Right Shift >>
+class Solution {
+public:
+    int hammingWeight(uint32_t n) {
+        int res=0;
+        while(n!=0)
+        {
+            res+=n&1;
+            n=n>>1;
+        }
+        return res;
+    }
+};
+
+7.Hamming Distance
+Example 1:
+Input: x = 1, y = 4
+Output: 2
+Explanation:
+1   (0 0 0 1)
+4   (0 1 0 0)
+       ↑   ↑
+The above arrows point to positions where the corresponding bits are different.
+
+class Solution {
+public:
+    int hammingDistance(int x, int y) {
+        int s=x^y;
+        int res=0;
+        while(s!=0)
+        {
+            res+=s&1;
+            s=s>>1;
+        }
+        return res;
+    }
+};
 
 
 
