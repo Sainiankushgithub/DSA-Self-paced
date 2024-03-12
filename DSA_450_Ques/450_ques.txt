@@ -497,6 +497,10 @@ public:
     }
 };
 
+8.Reverse Bits
+Input: n = 00000010100101000001111010011100
+Output:    964176192 (00111001011110000010100101000000)
+Explanation: The input binary string 00000010100101000001111010011100 represents the unsigned integer 43261596, so return 964176192 which its binary representation is 00111001011110000010100101000000.
 
 
 
@@ -511,8 +515,68 @@ public:
 
 
 
+•	DAY 19 :
+1.Binary Search :
 
 
 
+4.Valid Perfect Square :
+Example 1:
+Input: num = 16
+Output: true
+Explanation: We return true because 4 * 4 = 16 and 4 is an integer.
+Example 2:
+Input: num = 14
+Output: false
+Explanation: We return false because 3.742 * 3.742 = 14 and 3.742 is not an integer.
+
+class Solution {
+public:
+    bool isPerfectSquare(int num) {
+        if(num==1 || num==0)
+        return true;
+        long long l=0,h=num/2;
+        while(l<=h)
+        {
+            long long m=(l+h)/2;
+            if(m*m==num){return true;}
+            else if(m*m>num){h=m-1;}
+            else{l=m+1;}
+        }
+        return false;
+    }
+};
+
+5.Kth Missing Positive Number :
+Example 1:
+Input: arr = [2,3,4,7,11], k = 5
+Output: 9
+Explanation: The missing positive integers are [1,5,6,8,9,10,12,13,...]. The 5th missing positive integer is 9.
+Example 2:
+Input: arr = [1,2,3,4], k = 2
+Output: 6
+Explanation: The missing positive integers are [5,6,7,...]. The 2nd missing positive integer is 6.
+class Solution {
+public:
+    int findKthPositive(vector<int>& arr, int k) {
+        int n=arr[arr.size()-1];
+        int i=0,j=0;
+        while(i<n)
+        {
+            if((i+1)!=arr[j])
+            {
+                k--;
+                if(k==0)
+                return i+1;
+            }
+            else
+            {
+                j++;
+            }
+            i++;
+        }
+        return arr[arr.size()-1]+k;
+    }
+};
 
 
