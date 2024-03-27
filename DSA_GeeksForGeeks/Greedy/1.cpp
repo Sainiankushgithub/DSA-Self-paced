@@ -17,7 +17,7 @@ int maxCount(vector<vector<int>>&pair)
   int res=1,count=1;
   for(int i=0;i<pair.size()-1;i++)
   {
-    int initial=pair[i][1];
+    int initial=pair[i][pair[i].size()-1];
     count=1;
     for(int k=i+1;k<pair.size();k++)
     {
@@ -26,7 +26,7 @@ int maxCount(vector<vector<int>>&pair)
       {
         count++;
         res=max(res,count);
-        initial=pair[k][1];
+        initial=pair[k][pair[k].size()-1];
       }
     }
   }
