@@ -34,9 +34,12 @@ int maxCount(vector<vector<int>>&pair)
 }
 int main()
 {
-  // vector<vector<int>>pair={{2,3},{1,4},{5,8},{6,10}};
-  vector<vector<int>>pair={{1,3},{2,4},{3,8},{10,11}};
-  cout<<"Displaying your vector "<<endl;
+  vector<vector<int>>pair={{2,3},{1,4},{5,8},{6,10}};
+  // vector<vector<int>>pair={{3,8},{2,4},{1,3},{10,11}};
+  cout<<"Displaying your vector Before Sorting"<<endl;
+  display(pair);
+  cout<<"Displaying your vector After sorting "<<endl;
+  sort(pair.begin(),pair.end());
   display(pair);
   cout<<"Maximum count : "<<maxCount(pair)<<endl;
 return 0;
