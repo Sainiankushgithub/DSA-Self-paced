@@ -1,4 +1,7 @@
 // ACTIVITY SELECTION PROBLEM
+
+
+// --- MY METHOD 
 #include<bits/stdc++.h>
 using namespace std;
 void display(vector<vector<int>>&pair)
