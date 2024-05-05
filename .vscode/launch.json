@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/GitHub/DSA-Self-paced/Dsa_gfg/Greedy",
-      "program": "c:/GitHub/DSA-Self-paced/Dsa_gfg/Greedy/build/Debug/outDebug",
+      "cwd": "c:/GitHub/DSA-Self-paced/Dsa_gfg/Stack",
+      "program": "c:/GitHub/DSA-Self-paced/Dsa_gfg/Stack/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
