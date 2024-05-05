@@ -28,7 +28,19 @@ class ListNode
   }
   ListNode*copyRandomList(ListNode*head)
   {
-    
+    if(head==NULL)
+    {
+      return head;
+    }
+    ListNode*curr=head;
+    while(curr!=NULL)
+    {
+      ListNode*temp=new ListNode(curr->val);
+      temp->next=curr->next;
+      curr->next=temp;
+      curr=temp->next;
+    }
+    return head;
   }
   void Display(ListNode*head)
   {
