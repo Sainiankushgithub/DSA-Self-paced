@@ -1,35 +1,58 @@
-
-// HEAP INTRODUCTION 
-// MIN HEAP IMPLEMENTATION 
-
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-struct MinHeap
+#define maxEle 100
+class Heap
 {
-    int *arr;
-    int capacity;
+public:
+    int arr[maxEle];
     int size;
-    MinHeap(int c)
+    Heap()
     {
-        capacity=c;
-        arr=new int[capacity];
-        size=0;
+        arr[0] = -1;
+        size = 0;
     }
-    int left(int i)
+    void insertion(int val)
     {
-        return ((2*i)+1);
+        size++;
+        arr[size] = val;
+        int index = size;
+        while (index > 1)
+        {
+            int parent = index / 2;
+            if (arr[parent] < arr[index])
+            {
+                swap(arr[parent], arr[index]);
+                index = parent;
+            }
+            else
+            {
+                return;
+            }
+        }
     }
-    int right(int i)
+    void print()
     {
-        return ((2*1)+2);
-    }
-    int parent(int i)
-    {
-        return (i-1)/2;
+        for (int i=1;i<=size;i++)
+        {
+            cout << arr[i] << " ";
+        }
+        cout << endl;
     }
 };
 int main()
 {
-
-return 0;
+    Heap h;
+    int n;
+    cout<<"Enter the total number of element you want to insert\n";
+    cin>>n;
+    cout<<"Enter the elements which you want to insert\n";
+    for(int i=0;i<n;i++)
+    {
+        int x;
+        cin>>x;
+        h.insertion(x);
+    }
+    cout<<"Displaying your Heap elements\n";
+    h.print();
+    return 0;
 }
