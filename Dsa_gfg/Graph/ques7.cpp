@@ -15,11 +15,12 @@ void display(vector<int>adjList[],int nodes)
 }
 vector<int>ShortestPath(vector<int>adjList[],int nodes,int source)
 {
-  vector<int>dist(nodes+1,0);
+  vector<int>dist(nodes+1,-1);
   vector<int>visited(nodes+1,0);
   queue<int>q;
   q.push(source);
   visited[source]=1;
+  dist[source]=0;
   while(!q.empty())
   {
     int node=q.front();
@@ -28,6 +29,7 @@ vector<int>ShortestPath(vector<int>adjList[],int nodes,int source)
     {
       if(visited[it]==false)
       {
+        q.push(it);
         visited[it]=1;
         dist[it]=dist[node]+1;
       }
