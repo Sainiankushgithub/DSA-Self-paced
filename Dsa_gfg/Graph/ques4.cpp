@@ -17,7 +17,7 @@ int main()
     adjList[n1].push_back(n2);
     adjList[n2].push_back(n1);
   }
-  cout<<"Node connected to given edges are \n";
+  cout<<"Node connected to edges are \n";
   for(int i=1;i<=nodes;i++)
   {
     cout<<"Node : "<<i<<"-> ";
