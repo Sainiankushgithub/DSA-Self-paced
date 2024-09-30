@@ -19,12 +19,14 @@ void printGraph(vector<int>adj[],int V)
 }
 int main()
 {
-  int V;
+  int V,E;
   cout<<"Entet the  total number of vertexs\n";
   cin>>V;
+  cout<<"Enter the total number of edges\n";
+  cin>>E;
   vector<int>adj[V];
-  cout<<"Enter the edges which are connected to the vertex\n";
-  for(int i=0;i<V;i++)
+  cout<<"Enter the edges which are connected to the vertices\n";
+  for(int i=0;i<E;i++)
   {
     int u,v;
     cin>>u>>v;
