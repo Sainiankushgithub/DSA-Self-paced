@@ -1,31 +1,36 @@
 // Adjacency list 
 #include<bits/stdc++.h>
 using namespace std;
-int main()
+void addEdge(vector<int>adj[],int u,int v)
 {
-  int nodes,edges;
-  cout<<"Enter the number of nodes \n";
-  cin>>nodes;
-  cout<<"Enter the total number of edges\n";
-  cin>>edges;
-  vector<int>adjList[nodes+1];
-  cout<<"Enter the nodes of the edge\n";
-  for(int i=0;i<edges;i++)
+  adj[u].push_back(v);
+  adj[v].push_back(u);
+}
+void printGraph(vector<int>adj[],int V)
+{
+  for(int i=0;i<V;i++)
   {
-    int n1,n2;
-    cin>>n1>>n2;
-    adjList[n1].push_back(n2);
-    adjList[n2].push_back(n1);
-  }
-  cout<<"Node connected to the edges are \n";
-  for(int i=1;i<=nodes;i++)
-  {
-    cout<<"Node : "<<i<<"-> ";
-    for(auto it:adjList[i])
+    for(auto u:adj[i])
     {
-      cout<<it<<" ";
+      cout<<u<<" ";
     }
     cout<<endl;
   }
+}
+int main()
+{
+  int V;
+  cout<<"Entet the  total number of vertexs\n";
+  cin>>V;
+  vector<int>adj[V];
+  cout<<"Enter the edges which are connected to the vertex\n";
+  for(int i=0;i<V;i++)
+  {
+    int u,v;
+    cin>>u>>v;
+    addEdge(adj,u,v);
+  }
+  cout<<"Displaying the graph using adjacency list\n";
+  printGraph(adj,V);
 return 0;
 }
